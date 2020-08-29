@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def store(request):
+def stickers(request):
      context = {}
-     return render(request, 'store/store.html', context)
+     return render(request, 'store/stickers.html', context)
 
 def cart(request):
      context = {}
