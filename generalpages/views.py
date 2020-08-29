@@ -6,9 +6,17 @@ def home(request):
      context = {}
      return render(request, 'generalpages/home.html', context)
 
+def about(request):
+      context = {}
+      return render(request, 'generalpages/about.html', context)
+
 def charities(request):
      context = {}
      return render(request, 'generalpages/charities.html', context)
+
+def artists(request):
+      context = {}
+      return render(request, 'generalpages/artists.html', context)
 
 def contacts(request):
       context = {}
