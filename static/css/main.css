@@ -1,0 +1,22 @@
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+.nav-item {
+    margin: 1em;
+}
+
+hr.headsep {
+    width:30%;
+    margin:0 auto;
+}
+
+.header {
+    text-align:center;
+
+}

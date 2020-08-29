@@ -13,8 +13,20 @@
         {% block extra_head_content %} {% endblock %}
     </head>
     <body>
-        <h3>Navbar Placeholder</h3>
-        <hr>
+        <div class="header">
+            <img class="center" id="logo" src="{% static '/images/logo.png' %}" width="32" height="32">
+            <h1 class="center">Sticking Together</h1>
+            <hr class="headsep">
+            <nav class="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-link">home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">about</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">charities</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">stickers</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">contacts</a></li>
+                </ul>
+            </nav> 
+        </div>
 
         {% block content %} {% endblock %}
 
