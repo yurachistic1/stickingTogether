@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        
+        {% block title %} {% endblock %}
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        
+        {% block extra_head_content %} {% endblock %}
+    </head>
+    <body>
+        <h3>Navbar Placeholder</h3>
+        <hr>
+
+        {% block content %} {% endblock %}
+
+    </body>
+</html>
+
