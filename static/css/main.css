@@ -1,3 +1,22 @@
+:root {
+    font-size: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    --text-primary: #f2b445;
+    --text-secondary: #102e38;
+    --bg-primary: #102e38;
+  }
+
+body {
+    margin: 0;
+}
+  
+h1 {
+    font-size: 60px;
+    font-family: 'Gaegu';
+    color: var(--text-primary);
+    margin: 0;
+}
+
 .navbar-nav {
     list-style: none;
     padding: 0;
@@ -11,12 +30,31 @@
     margin: 1em;
 }
 
-hr.headsep {
-    width:30%;
-    margin:0 auto;
+.hr {
+    display: inline-block;
+}
+.hr:before {
+    content: '';
+    display: block;
+    border-top: 2px solid var(--text-primary);
+    margin: 0;
 }
 
 .header {
-    text-align:center;
+    display: grid;
+    justify-items: center;
+    background-color: var(--bg-primary);
+    margin: 0;
+}
 
+a.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+#logo {
+    width: 75px;
+    height: 75px;
+    margin-left: -30px;
+    margin-bottom: -25px 
 }
