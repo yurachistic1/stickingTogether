@@ -10,7 +10,7 @@ def about(request):
       context = {}
       return render(request, 'generalpages/about.html', context)
 
-def charities(request):
+def causes(request):
      context = {}
      return render(request, 'generalpages/charities.html', context)
 
