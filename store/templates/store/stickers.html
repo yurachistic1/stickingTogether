@@ -2,5 +2,29 @@
 {% load static %}
 
 {% block content %}
-    <h3>store</h3>
+<div class="shop_grid">
+    <p class="page_header">Sticker Collections</p>
+    <p class="normal" style="max-width: 960px; text-align: center;">
+        Our stickers are made from vinyl with a matt finish. 
+        This high-quality material makes them durable and even waterproof. 
+        They’re perfect for laptops, water bottles, notebook covers and more! 
+    </p>
+    <p class="subheading">Stickers for the Lebanese Red Cross</p>
+    <div class="sticker" style="max-width: 700px;">
+        <div class="sticker-images" style="justify-self: center;">
+            <img class="sticker-image" src="{% static '/images/frankiBeirut.png' %}" width="200">
+        </div>
+        <div class="sticker-text">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="sticker-name">Beauty of Beirut</span>
+                <span class="sticker-price">£2.50</span>
+            </div>
+            <p>Mohammad Al-Amin Mosque or the ‘Blue Mosque’ is one of the beautiful and iconic buildings of Beirut.
+            </p>
+            <p>Designed by: Francesca Lim</p>
+            <button> Add to cart </button>
+            <input class="sticker-quantity" type="number" step="1" value="1" min="1">
+        </div>
+    </div>
+</div>    
 {% endblock %}

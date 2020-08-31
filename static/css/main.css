@@ -1,8 +1,10 @@
 :root {
-    font-size: 20px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #102e38;
     --text-primary: #f2b445;
     --text-secondary: #102e38;
+    --text-tertiary: #df5e4a;
     --bg-primary: #102e38;
   }
 
@@ -26,8 +28,16 @@ h1 {
     width: 100%;
   }
 
+.nav-item:first-child {
+    margin-left: 0;
+}
+.nav-item:last-child {
+    margin-right: 0;
+}
+
 .nav-item {
-    margin: 1em;
+    margin: 0.7em 1em 0.7em 1em;
+    font-size: 20px;
 }
 
 .hr {
@@ -52,9 +62,60 @@ a.nav-link {
     color: var(--text-primary);
 }
 
+a.nav-link:hover {
+    font-weight: bold;
+    color: var(--text-tertiary);
+}
+
 #logo {
-    width: 75px;
-    height: 75px;
+    width: 125px;
     margin-left: -30px;
     margin-bottom: -25px 
 }
+
+.shop_grid {
+    display: grid;
+    justify-items: center;
+}
+
+.subheading {
+    font-size: 24px;
+    color: var(--text-tertiary);
+    margin: 2rem
+}
+
+.sticker {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.sticker-image {
+    margin: 0 2rem 0 0
+}
+
+.sticker-name {
+    font-size: 24px;
+}
+
+.sticker-price {
+    font-size: 24px;
+}
+
+.sticker-quantity {
+    width: 2rem;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {  
+
+    opacity: 1;
+ 
+ }
+
+ .page_header {
+     font-size: 50px;
+     font-family: 'Gaegu';
+     text-align: center;
+     margin-top: 20px;
+     margin-bottom: 10px;
+ }
