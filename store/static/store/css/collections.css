@@ -1,0 +1,25 @@
+.shop_grid {
+    display: grid;
+    justify-items: center;
+}
+
+.sticker {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.sticker-image {
+    margin: 0 2rem 0 0
+}
+
+.sticker-name {
+    font-size: 2.4rem;
+}
+
+.sticker-price {
+    font-size: 2.4rem;
+}
+
+.sticker-quantity {
+    width: 3.2rem;
+}

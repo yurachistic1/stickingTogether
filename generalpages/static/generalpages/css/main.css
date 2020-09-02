@@ -1,0 +1,46 @@
+:root {
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #102e38;
+    --text-primary: #f2b445;
+    --text-secondary: #102e38;
+    --text-tertiary: #df5e4a;
+    --bg-primary: #102e38;
+  }
+
+body {
+    margin: 0;
+}
+
+p {
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+}
+
+.content-body {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.page_header {
+    font-size: 6rem;
+    font-family: 'Gaegu';
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.subheading {
+    font-size: 3rem;
+    color: var(--text-tertiary);
+    margin: 2rem
+}
+
+/* Spinner Styling: always show arrows */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {  
+
+    opacity: 1;
+ 
+ }

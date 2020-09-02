@@ -1,10 +1,14 @@
 {% extends 'generalpages/base.html' %}
 {% load static %}
 
+{% block extra_head_content %} 
+  <link rel="stylesheet" type="text/css" href="{% static 'store/css/collections.css'%}">
+{% endblock %}
+
 {% block content %}
 <div class="shop_grid">
     <p class="page_header">Sticker Collections</p>
-    <p class="normal" style="max-width: 960px; text-align: center;">
+    <p style="max-width: 960px; text-align: center;">
         Our stickers are made from vinyl with a matt finish. 
         This high-quality material makes them durable and even waterproof. 
         They’re perfect for laptops, water bottles, notebook covers and more! 
