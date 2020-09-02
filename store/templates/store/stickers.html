@@ -8,14 +8,14 @@
 {% block content %}
 <div class="shop_grid">
     <p class="page_header">Sticker Collections</p>
-    <p style="max-width: 960px; text-align: center;">
+    <p style="max-width: 96rem; text-align: center;">
         Our stickers are made from vinyl with a matt finish. 
         This high-quality material makes them durable and even waterproof. 
         They’re perfect for laptops, water bottles, notebook covers and more! 
     </p>
     <p class="subheading">Stickers for the Lebanese Red Cross</p>
-    <div class="sticker" style="max-width: 700px;">
-        <div class="sticker-images" style="justify-self: center;">
+    <div class="sticker">
+        <div class="sticker-images">
             <img class="sticker-image" src="{% static '/images/frankiBeirut.png' %}" width="200">
         </div>
         <div class="sticker-text">
@@ -27,7 +27,7 @@
             </p>
             <p>Designed by: Francesca Lim</p>
             <button> Add to cart </button>
-            <input class="sticker-quantity" type="number" step="1" value="1" min="1">
+            <input class="sticker-quantity" type="number" step="1" value="1" min="1" max="20" onkeydown="return false">
         </div>
     </div>
 </div>    
