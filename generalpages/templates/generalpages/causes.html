@@ -1,6 +1,22 @@
 {% extends 'generalpages/base.html' %}
 {% load static %}
 
+{% block extra_head_content %} 
+  <link rel="stylesheet" type="text/css" href="{% static 'generalpages/css/causes.css'%}">
+{% endblock %}
+
 {% block content %}
-    <h3>charities</h3>
+    <p class="page_header"> Who we are sticking together for </p>
+    <div class="body_box">
+        <div class="causes_container">
+            <p class="subheading text-al-cntr causes-title"> Beirut Explosion Victims</p>
+            <p class="causes_description text-al-just"> This is a description of the beirut blast and the work that the lebanese red cross is doing blach blah blah blah blah blah  </p>
+            <div class="causes_button">
+                <button class="big-btn"> View Stickers </button>
+            </div> 
+            <div class="causes_image">
+                <img src="{% static 'generalpages/images/explosion.jpg' %}" alt="Beirut Explosion">
+            </div>
+        </div>
+    </div>
 {% endblock %}
