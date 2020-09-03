@@ -10,10 +10,10 @@
     <p class ="textbox1"> Sticking together for a good cause </p>
     <p class="textbox2"> Buy stickers, support the community! </p>
     <div class="button1">
-        <button class="big-btn"> View Causes </button>
+        <a href="{% url 'causes' %}"><button class="big-btn"> View Causes </button></a>
     </div>
     <div class="button2">
-        <button class="big-btn"> View Stickers </button>
+        <a href="{% url 'stickers' %}"><button class="big-btn"> View Stickers </button></a>
     </div>
 </div>
 
@@ -49,10 +49,10 @@
 </div>
 <div class="about_container">
     <div class="button1">
-        <button class="big-btn"> Learn More </button>
+        <a href="{% url 'about' %}"><button class="big-btn"> Learn More </button></a>
     </div>
     <div class="button2">
-        <button class="big-btn"> View Stickers </button>
+        <a href="{% url 'stickers' %}"><button class="big-btn"> View Stickers </button></a>
     </div>	
 </div>
 {% endblock %}
