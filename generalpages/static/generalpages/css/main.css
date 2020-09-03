@@ -32,6 +32,13 @@ button:hover {
     color: var(--text-tertiary);
   }
 
+.big-btn {
+    margin: 5rem; 
+    font-size: 2rem;
+    padding: 1rem 2.8rem;
+    display: inline-block;
+  }
+
 .body_box {
 	display: grid;
 	grid-template-columns: 1fr;
