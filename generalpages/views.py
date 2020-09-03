@@ -12,7 +12,7 @@ def about(request):
 
 def causes(request):
      context = {}
-     return render(request, 'generalpages/charities.html', context)
+     return render(request, 'generalpages/causes.html', context)
 
 def artists(request):
       context = {}
