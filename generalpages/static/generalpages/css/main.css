@@ -2,26 +2,26 @@
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
     color: #102e38;
-    --text-primary: #f2b445;
-    --text-secondary: #102e38;
-    --text-tertiary: #df5e4a;
+    --text-primary: #f2b445; /* mustard */
+    --text-secondary: #102e38; /* emerald */
+    --text-tertiary: #df5e4a; /* coral */
     --bg-primary: #102e38;
   }
 
 body {
     margin: 0;
+    font-size: 1.6rem;
 }
 
 p {
-    font-size: 1.6rem;
     color: var(--text-secondary);
 }
 
 button {
-    background-color: var(--text-secondary); /* emerald */
+    background-color: var(--text-secondary); 
     font-family: inherit;
     border: none;
-    color: var(--text-primary); /* mustard */
+    color: var(--text-primary); 
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -29,7 +29,7 @@ button {
   }
 
 button:hover {
-    color: var(--text-tertiary); /* coral */
+    color: var(--text-tertiary);
   }
 
 .body_box {
