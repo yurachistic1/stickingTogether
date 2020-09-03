@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         
+        <script src="https://kit.fontawesome.com/6d3535b950.js" crossorigin="anonymous"></script>
+
         {% block extra_head_content %} {% endblock %}
         <style>
             @import url("{% static 'generalpages/css/main.css' %}");
@@ -19,6 +21,7 @@
     <body>
         <div class="navbar-grid">
             <img class="center" id="logo" src="{% static '/generalpages/images/logo.png' %}">
+            <a class="basket-icon" href="{% url 'cart' %}"><i class="fas fa-shopping-basket"><span class="item-counter">4</span></i></a>
             <header class="website-header">Sticking Together</header>
             <nav class="navbar hr">
                 <ul class="navbar-nav">

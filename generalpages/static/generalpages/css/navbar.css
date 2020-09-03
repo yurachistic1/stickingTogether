@@ -1,4 +1,16 @@
+.navbar-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    background-color: var(--bg-primary);
+    margin: 0;
+}
+
 .website-header {
+    grid-column: 2 / span 10;
+    grid-row-start: 2;
+    grid-row-end: 2;
     font-size: 8rem;
     font-family: 'Gaegu';
     color: var(--text-primary);
@@ -6,16 +18,28 @@
 }
 
 #logo {
+    grid-column: 2 / span 10;
+    grid-row-start: 1;
+    grid-row-end: 1;
     width: 12.5rem;
     margin-left: -3.3rem;
     margin-bottom: -4rem 
 }
 
-.navbar-grid {
-    display: grid;
-    justify-items: center;
-    background-color: var(--bg-primary);
-    margin: 0;
+.basket-icon {
+    grid-column: 12 / span 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-size: 3rem; 
+    align-self: center;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.navbar {
+    grid-column: 2 / span 10;
+    grid-row-start: 3;
+    grid-row-end: 3;
 }
 
 .navbar-nav {
@@ -28,7 +52,7 @@
 }
 
 .nav-item {
-    margin: 1rem 1.5rem 1rem 1.5rem;
+    margin: 2rem 2.5rem 2rem 2.5rem;
     font-size: 2rem;
 }
 
@@ -58,3 +82,17 @@ a.nav-link:hover {
     font-weight: bold;
     color: var(--text-tertiary);
 }
+
+.item-counter {
+    background-color: var(--text-tertiary);
+    border-radius: 0.2rem;
+    color: white;
+    font-family: "Poppins";
+   
+    padding: 0.2rem 0.4rem;
+    font-size: 1.2rem;
+    
+    position: absolute; /* Position the badge within the relatively positioned button */
+    bottom: 0.5rem;
+    right: -0.9rem;
+  }
