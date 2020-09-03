@@ -17,9 +17,31 @@ p {
     color: var(--text-secondary);
 }
 
+button {
+    background-color: var(--text-secondary); /* emerald */
+    font-family: inherit;
+    border: none;
+    color: var(--text-primary); /* mustard */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.4rem;
+  }
+
+button:hover {
+    color: var(--text-tertiary); /* coral */
+  }
+
+.body_box {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+}
+
 .content-body {
     margin-left: 2rem;
     margin-right: 2rem;
+    max-width: 96rem;
 }
 
 .page_header {
@@ -28,6 +50,12 @@ p {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
+}
+
+.section-header {
+	font-size: 4rem;
+	font-family: "Gaegu";
+	text-align: center;
 }
 
 .subheading {
@@ -44,3 +72,13 @@ input[type=number]::-webkit-outer-spin-button {
     opacity: 1;
  
  }
+
+/* Utility */
+
+.text-al-just{
+    text-align: justify;
+}
+
+.text-al-cntr {
+    text-align: center;
+}

@@ -9,6 +9,11 @@
     max-width: 70rem;
 }
 
+.sticker-name-price {
+    display: flex; 
+    justify-content: space-between;
+}
+
 .sticker-images {
     justify-self: center;
 }

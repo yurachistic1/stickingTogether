@@ -1,6 +1,58 @@
 {% extends 'generalpages/base.html' %}
 {% load static %}
 
+{% block extra_head_content %} 
+  <link rel="stylesheet" type="text/css" href="{% static 'generalpages/css/home.css'%}">
+{% endblock %}
+
 {% block content %}
-    <h3>home</h3>
+<div class="background_image" style="background-image: url({% static '/generalpages/images/Map_Background.png' %});">
+    <p class ="textbox1"> Sticking together for a good cause </p>
+    <p class="textbox2"> Buy stickers, support the community! </p>
+    <div class="button1">
+        <button class="img_button"> View Causes </button>
+    </div>
+    <div class="button2">
+        <button class="img_button"> View Stickers </button>
+    </div>
+</div>
+
+<p class="section-header"> What we do</p>
+<div class="body_box">
+    <div class="grid_container">
+        <div class="whatwedo_container">
+            <img src="{% static '/generalpages/images/Design.png' %}" alt="Design">
+            <p class="whatwedo_description">Talented illustrators donate either signature or custom designs to support a cause</p>
+        </div>
+        <div class="whatwedo_container">
+            <img src="{% static '/generalpages/images/Make.png' %}" alt="Make">
+            <p class="whatwedo_description">We turn these designs into high-quality vinyl stickers</p>
+        </div>
+        <div class="whatwedo_container">
+            <img src="{% static '/generalpages/images/Donate.png' %}" alt="Donate">
+            <p class="whatwedo_description">Profits from the sale of stickers are donated to the stipulated charitable organisation</p>
+        </div>			
+    </div>
+</div>
+
+<p class="section-header"> About </p>
+<div class="body_box">
+    <p class="content-body text-al-just"> 
+        Sticking Together is a fundraiser started by two pals who just wanted to spread love and give back to the world through a shared obsession with stickers! 
+    <br> 
+    <br>
+        By purchasing our stickers, you’ll be supporting a fundraiser for a meaningful cause. The first cause we’re supporting is the support of victims of the Beirut explosion. Victims of this catastrophe, many of whom have lost their homes, are being sheltered and cared for by the Lebanese Red Cross. All the profits from the sale of stickers in the Lebanese Red Cross sticker collection will go to this organisation. 
+    <br>
+    <br>
+        Check out the sticker collection or learn more about Sticking Together!	
+    </p>
+</div>
+<div class="about_container">
+    <div class="button1">
+        <button class="img_button"> Learn More </button>
+    </div>
+    <div class="button2">
+        <button class="img_button"> View Stickers </button>
+    </div>	
+</div>
 {% endblock %}
