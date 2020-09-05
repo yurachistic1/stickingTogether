@@ -3,20 +3,13 @@
 	text-align: end;
 }
 
-.border-top {
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: #8080805c;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-
 .product {
 	width: 70rem;
 	display: grid;
 	grid-template-columns: auto repeat(5, 1fr);
 	grid-template-rows: repeat(4, auto);
-	
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 .product-image {
@@ -54,4 +47,9 @@
 	display: flex;
 	justify-content: space-between;
 	
+}
+
+.pad {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }

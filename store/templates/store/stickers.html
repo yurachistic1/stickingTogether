@@ -15,19 +15,23 @@
     </p>
     <p class="subheading">Stickers for the Lebanese Red Cross</p>
     {% for sticker in stickers %}
-    <div class="sticker">
+    <div class="border-top sticker">
         <div class="sticker-images">
-            <img class="sticker-image" src="{% static 'store/images/frankiBeirut.png' %}" width="200">
+            <img class="sticker-image" src="{% static 'store/images/frankiBeirut.png' %}">
         </div>
         <div class="sticker-text">
-            <div class="sticker-name-price">
-                <span class="sticker-name">{{sticker.name}}</span>
-                <span class="sticker-price price">{{sticker.price|floatformat:2}}</span>
+            <div class="sticker-top">
+                <div class="sticker-name-price">
+                    <span class="sticker-name">{{sticker.name}}</span>
+                    <span class="sticker-price price">{{sticker.price|floatformat:2}}</span>
+                </div>
+                <p>{{sticker.description}}</p>
             </div>
-            <p>{{sticker.description}}</p>
-            <p>Designed by: {{sticker.artist}}</p>
-            <button> Add to cart </button>
-            <input class="sticker-quantity" type="number" step="1" value="1" min="1" max="20">
+            <div class="sticker-bottom">
+                <p>Designed by: {{sticker.artist}}</p>
+                <button> Add to cart </button>
+                <input class="sticker-quantity" type="number" step="1" value="1" min="1" max="20">
+            </div>
         </div>
     </div>
     {% endfor %}

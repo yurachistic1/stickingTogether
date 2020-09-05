@@ -95,3 +95,9 @@ input[type=number]::-webkit-outer-spin-button {
 .text-al-cntr {
     text-align: center;
 }
+
+.border-top {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #8080805c;
+}

@@ -6,7 +6,20 @@
 .sticker {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    max-width: 70rem;
+    width: 70rem;
+    padding: 2rem 0 2rem 0;
+}
+
+.sticker-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 0.5rem;
+}
+
+.sticker-text p {
+    width: 40rem;
+    margin: 0.3rem 0 0.1rem 0
 }
 
 .sticker-name-price {
@@ -19,7 +32,8 @@
 }
 
 .sticker-image {
-    margin: 0 2rem 0 0;
+    margin: 0;
+    width: 20rem;
 }
 
 .sticker-name {
