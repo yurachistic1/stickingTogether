@@ -17,7 +17,7 @@
     {% for sticker in stickers %}
     <div class="border-top sticker">
         <div class="sticker-images">
-            <img class="sticker-image" src="{% static 'store/images/frankiBeirut.png' %}">
+            <img class="sticker-image" src="{{ sticker.image_1.url }}">
         </div>
         <div class="sticker-text">
             <div class="sticker-top">
