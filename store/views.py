@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from .models import Sticker
 
 # Create your views here.
 
 def stickers(request):
-     context = {}
+     stickers = Sticker.objects.all()
+     context = {'stickers': stickers}
      return render(request, 'store/stickers.html', context)
 
 def cart(request):

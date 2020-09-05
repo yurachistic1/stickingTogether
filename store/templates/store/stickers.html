@@ -14,21 +14,22 @@
         They’re perfect for laptops, water bottles, notebook covers and more! 
     </p>
     <p class="subheading">Stickers for the Lebanese Red Cross</p>
+    {% for sticker in stickers %}
     <div class="sticker">
         <div class="sticker-images">
             <img class="sticker-image" src="{% static 'store/images/frankiBeirut.png' %}" width="200">
         </div>
         <div class="sticker-text">
             <div class="sticker-name-price">
-                <span class="sticker-name">Beauty of Beirut</span>
-                <span class="sticker-price price">2.50</span>
+                <span class="sticker-name">{{sticker.name}}</span>
+                <span class="sticker-price price">{{sticker.price|floatformat:2}}</span>
             </div>
-            <p>Mohammad Al-Amin Mosque or the ‘Blue Mosque’ is one of the beautiful and iconic buildings of Beirut.
-            </p>
-            <p>Designed by: Francesca Lim</p>
+            <p>{{sticker.description}}</p>
+            <p>Designed by: {{sticker.artist}}</p>
             <button> Add to cart </button>
             <input class="sticker-quantity" type="number" step="1" value="1" min="1" max="20">
         </div>
     </div>
+    {% endfor %}
 </div>    
 {% endblock %}
