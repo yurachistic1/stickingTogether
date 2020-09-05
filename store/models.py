@@ -9,7 +9,7 @@ class Sticker(models.Model):
     ]
 
     name = models.CharField(max_length=30, unique=True)
-    price = models.FloatField()
+    price = models.FloatField(verbose_name="Price (£)")
     description = models.TextField(default="", blank=True)
     artist = models.CharField(max_length=30)
     singapore_stock = models.IntegerField()
