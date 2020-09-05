@@ -11,15 +11,6 @@
 	padding-bottom: 1rem;
 }
 
-.price {
-	color: var(--text-tertiary);
-	font-weight: bold;
-}
-
-.price::before {
-	content: "£";
-}
-
 .product {
 	width: 70rem;
 	display: grid;

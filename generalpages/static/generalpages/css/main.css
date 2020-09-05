@@ -68,6 +68,15 @@ button:hover {
     margin: 2rem
 }
 
+.price {
+	color: var(--text-tertiary);
+	font-weight: bold;
+}
+
+.price::before {
+	content: "£";
+}
+
 /* Spinner Styling: always show arrows */
 
 input[type=number]::-webkit-inner-spin-button,
