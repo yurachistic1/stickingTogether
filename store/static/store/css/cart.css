@@ -1,0 +1,66 @@
+.align-end {
+	width: 70rem;
+	text-align: end;
+}
+
+.border-top {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #8080805c;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.price {
+	color: var(--text-tertiary);
+	font-weight: bold;
+}
+
+.price::before {
+	content: "£";
+}
+
+.product {
+	width: 70rem;
+	display: grid;
+	grid-template-columns: auto repeat(5, 1fr);
+	grid-template-rows: repeat(4, auto);
+	
+}
+
+.product-image {
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 4;
+	width:  8rem;
+	margin-right: 1rem;
+}
+
+.product-desc {
+	grid-column: 2 / span 3;
+	grid-row: 1 / span 1;
+	margin: 0;
+}
+
+.product-price {
+	grid-column: 6 / span 1;
+	grid-row: 1/ span 1;
+	margin: 0;
+	justify-self: end;
+}
+
+.product-quantity {
+	grid-column: 2 / span 2;
+	grid-row: 4/ span 1;
+	margin: 0;
+}
+
+.product-qt-spinner {
+    width: 3.2rem;
+}
+
+.product-shipping {
+	width: 70rem;
+	display: flex;
+	justify-content: space-between;
+	
+}

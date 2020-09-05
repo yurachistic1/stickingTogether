@@ -1,6 +1,42 @@
 {% extends 'generalpages/base.html' %}
 {% load static %}
 
+{% block extra_head_content %} 
+  <link rel="stylesheet" type="text/css" href="{% static 'store/css/cart.css'%}">
+{% endblock %}
+
 {% block content %}
-    <h3>cart</h3>
+<div class="body_box">
+    <p class="page_header">Shopping Basket</p>
+    <div class="align-end">Total</div>
+    <div class="product border-top">
+        <img class="product-image" src="{% static 'store/images/frankiBeirut.png' %}">
+        <p class="product-desc">Beauty of Beirut 5cm X 5cm</p>
+        <p class="product-price price">2.50</p>
+        <p class="product-quantity" >
+            Quantity: 
+            <input class="product-qt-spinner" type="number" step="1" value="1" min="1" max="20">
+            <button> Remove </button>
+        </p>
+    </div>
+
+    <div class="product border-top">
+        <img class="product-image" src="{% static 'store/images/frankiBeirut.png' %}">
+        <p class="product-desc">Beauty of Beirut 5cm X 5cm</p>
+        <p class="product-price price">2.50</p>
+        <p class="product-quantity" >
+            Quantity: 
+            <input class="product-qt-spinner" type="number" step="1" value="1" min="1" max="20">
+            <button> Remove </button>
+        </p>
+    </div>
+
+    <div class="product-shipping border-top">
+        <span>Shipping</span>
+        <span class="price">2.00</span>
+    </div>
+
+    <div class="align-end price border-top">7.00</div>
+</div>
+    
 {% endblock %}
