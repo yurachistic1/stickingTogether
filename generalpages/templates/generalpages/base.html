@@ -23,7 +23,7 @@
     <body>
         <div class="navbar-grid">
             <img class="center" id="logo" src="{% static '/generalpages/images/logo.png' %}">
-            <a class="basket-icon" href="{% url 'cart' %}"><i class="fas fa-shopping-basket"><span class="item-counter">4</span></i></a>
+            <a class="basket-icon" href="{% url 'cart' %}"><i class="fas fa-shopping-basket"><span id="bsk-count" class="item-counter">0</span></i></a>
             <header class="website-header">Sticking Together</header>
             <nav class="navbar hr">
                 <ul class="navbar-nav">
@@ -49,6 +49,8 @@
             </nav> 
         </div>
             {% block content %} {% endblock %}
+
+            <script type="text/javascript" src="{% static 'generalpages/js/updateCartCounter.js' %}"></script>
     </body>
 </html>
 
