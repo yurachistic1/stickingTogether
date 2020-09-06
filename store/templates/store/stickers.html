@@ -29,11 +29,13 @@
             </div>
             <div class="sticker-bottom">
                 <p>Designed by: {{sticker.artist}}</p>
-                <button> Add to cart </button>
-                <input class="sticker-quantity" type="number" step="1" value="1" min="1" max="20">
+                <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart"> Add to cart </button>
+                <input id="add{{forloop.counter0}}" class="sticker-quantity" type="number" step="1" value="1" min="1" max="20">
             </div>
         </div>
     </div>
     {% endfor %}
-</div>    
+</div>
+
+<script type="text/javascript" src="{% static 'store/js/cart.js' %}"></script>
 {% endblock %}
