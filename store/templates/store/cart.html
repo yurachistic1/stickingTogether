@@ -8,35 +8,33 @@
 {% block content %}
 <div class="body_box">
     <p class="page_header">Shopping Basket</p>
+    {% if items %}
     <div class="align-end">Total</div>
+    {% for item, i, tot in items %}
     <div class="product border-top">
-        <img class="product-image" src="{% static 'store/images/frankiBeirut.png' %}">
-        <p class="product-desc">Beauty of Beirut 5cm X 5cm</p>
-        <p class="product-price price">2.50</p>
+        <img class="product-image" src="{{ item.image_1.url }}">
+        <p class="product-desc">{{item.name}}</p>
+        <p id="total{{forloop.counter0}}" class="sub-total product-price price">{{tot|floatformat:2}}</p>
         <p class="product-quantity" >
             Quantity: 
-            <input class="product-qt-spinner" type="number" step="1" value="1" min="1" max="20">
-            <button> Remove </button>
+            <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="20">
+            <button class="update-cart" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="delete"> Remove </button>
+            <input type="hidden" id="price{{forloop.counter0}}" value="{{item.price}}">
         </p>
     </div>
-
-    <div class="product border-top">
-        <img class="product-image" src="{% static 'store/images/frankiBeirut.png' %}">
-        <p class="product-desc">Beauty of Beirut 5cm X 5cm</p>
-        <p class="product-price price">2.50</p>
-        <p class="product-quantity" >
-            Quantity: 
-            <input class="product-qt-spinner" type="number" step="1" value="1" min="1" max="20">
-            <button> Remove </button>
-        </p>
-    </div>
+    {% endfor %}
 
     <div class="pad product-shipping border-top">
         <span>Shipping</span>
-        <span class="price">2.00</span>
+        <span class="sub-total price">2.00</span>
     </div>
 
-    <div class="pad align-end price border-top">7.00</div>
+    <div id="totalID" class="pad align-end price border-top">0</div>
+
+    {% else %}
+    <p class="section-header">Your basket is empty:(</p>
+    {% endif %}
+
 </div>
-    
+<script type="text/javascript" src="{% static 'store/js/cart.js' %}"></script>   
 {% endblock %}
