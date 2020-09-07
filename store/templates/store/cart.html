@@ -13,7 +13,7 @@
     {% for item, i, tot in items %}
     <div class="product border-top">
         <img class="product-image" src="{{ item.image_1.url }}">
-        <p class="product-desc">{{item.name}}</p>
+        <p id="name{{forloop.counter0}}" class="product-desc">{{item.name}}</p>
         <p id="total{{forloop.counter0}}" class="sub-total product-price price">{{tot|floatformat:2}}</p>
         <p class="product-quantity" >
             Quantity: 
@@ -31,57 +31,12 @@
 
     <div id="totalID" class="pad align-end price border-top">0</div>
     <div id="paypal-button-container"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AeznO-wtAY_hi27DLqs3oA7_r85yQLh59brXe7CNQMxyeaWT2ORiy2F3JETLfKq-w00JoZVl6pbKvyfc&currency=GBP&disable-funding=credit,card"></script>
+    <script type="text/javascript" src="{% static 'store/js/paypalLogic.js' %}"></script>  
     {% else %}
     <p class="section-header">Your basket is empty:(</p>
     {% endif %}
 
 </div>
 <script type="text/javascript" src="{% static 'store/js/cart.js' %}"></script> 
-<script src="https://www.paypal.com/sdk/js?client-id=AeznO-wtAY_hi27DLqs3oA7_r85yQLh59brXe7CNQMxyeaWT2ORiy2F3JETLfKq-w00JoZVl6pbKvyfc&currency=GBP&disable-funding=credit,card"></script>
-<script>
-    paypal.Buttons({
-        createOrder: function(data, actions) {
-        const tot = document.getElementById('totalID').innerHTML
-        const ship = document.getElementById('shipID').innerHTML
-        // This function sets up the details of the transaction, including the amount and line item details.
-        return actions.order.create({
-            purchase_units: [{
-            amount: {
-                currency_code: 'GBP',
-                value: tot,
-                breakdown: {
-                    item_total: {
-                        currency_code: "GBP",
-                        value: tot-ship
-                    },
-                    shipping: {
-                        currency_code: "GBP",
-                        value: ship
-                    },
-                }
-
-            },
-            items:[
-                {
-                    name: "Sticker 1",
-                    description: "The best item ever",
-                    unit_amount: {
-                        currency_code: "GBP",
-                        value: tot-ship
-                    },
-                    quantity: "1"
-                }
-                ],
-            }]
-        });
-        },
-        onApprove: function(data, actions) {
-        // This function captures the funds from the transaction.
-        return actions.order.capture().then(function(details) {
-            // This function shows a transaction success message to your buyer.
-            alert('Transaction completed by ' + details.payer.name.given_name);
-        });
-        }
-    }).render('#paypal-button-container');
-</script>  
 {% endblock %}
