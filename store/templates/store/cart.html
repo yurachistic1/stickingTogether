@@ -12,13 +12,13 @@
     <div class="align-end">Total</div>
     {% for item, i, tot in items %}
     <div class="product border-top">
-        <img class="product-image" src="{{ item.image_1.url }}">
+        <img class="product-image pad" src="{{ item.image_1.url }}">
         <p id="name{{forloop.counter0}}" class="product-desc">{{item.name}}</p>
         <p id="total{{forloop.counter0}}" class="sub-total product-price price">{{tot|floatformat:2}}</p>
         <p class="product-quantity" >
             Quantity: 
             <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="20">
-            <button class="update-cart" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="delete"> Remove </button>
+            <button class="update-cart medium-btn" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="delete"> Remove </button>
             <input type="hidden" id="price{{forloop.counter0}}" value="{{item.price}}">
         </p>
     </div>

@@ -1,55 +1,106 @@
-.align-end {
-	width: 70rem;
-	text-align: end;
-}
-
-.product {
-	width: 70rem;
-	display: grid;
-	grid-template-columns: auto repeat(5, 1fr);
-	grid-template-rows: repeat(4, auto);
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-
-.product-image {
-	grid-column: 1 / span 1;
-	grid-row: 1 / span 4;
-	width:  8rem;
-	margin-right: 1rem;
-}
-
-.product-desc {
-	grid-column: 2 / span 3;
-	grid-row: 1 / span 1;
-	margin: 0;
-}
-
-.product-price {
-	grid-column: 6 / span 1;
-	grid-row: 1/ span 1;
-	margin: 0;
-	justify-self: end;
-}
-
-.product-quantity {
-	grid-column: 2 / span 2;
-	grid-row: 4/ span 1;
-	margin: 0;
-}
-
 .product-qt-spinner {
     width: 3.2rem;
-}
-
-.product-shipping {
-	width: 70rem;
-	display: flex;
-	justify-content: space-between;
-	
 }
 
 .pad {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
+}
+
+@media only screen and (min-width: 960px){
+	.align-end {
+		width: 96rem;
+		text-align: end;
+	}
+	
+	.product {
+		width: 96rem;
+		display: grid;
+		grid-template-columns: auto repeat(5, 1fr);
+		grid-template-rows: repeat(4, auto);
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	
+	.product-image {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 4;
+		width:  15rem;
+		margin-right: 1rem;
+	}
+	
+	.product-desc {
+		grid-column: 2 / span 3;
+		grid-row: 1 / span 1;
+		margin: 0;
+	}
+	
+	.product-price {
+		grid-column: 6 / span 1;
+		grid-row: 1/ span 1;
+		margin: 0;
+		justify-self: end;
+	}
+	
+	.product-quantity {
+		grid-column: 2 / span 2;
+		grid-row: 4/ span 1;
+		margin: 0;
+	}
+
+	.product-shipping {
+		width: 96rem;
+		display: flex;
+		justify-content: space-between;
+		
+	}
+
+}
+
+@media only screen and (max-width: 960px){
+	.align-end {
+		width: 90vw;
+		text-align: end;
+	}
+
+	.product {
+		width: 90vw;
+		display: grid;
+		grid-template-columns: 70% 30%;
+		grid-template-rows: repeat(3, auto);
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.product-image {
+		grid-column: 1 / span 2;
+		grid-row: 2 / span 1;
+		width:  15rem;
+	}
+	
+	.product-desc {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 0;
+	}
+	
+	.product-price {
+		grid-column: 2 / span 1;
+		grid-row: 1/ span 1;
+		margin: 0;
+		justify-self: end;
+	}
+	
+	.product-quantity {
+		grid-column: 1 / span 2;
+		grid-row: 3/ span 1;
+		margin: 0;
+	}
+
+	.product-shipping {
+		width: 90vw;
+		display: flex;
+		justify-content: space-between;
+		
+	}
 }
