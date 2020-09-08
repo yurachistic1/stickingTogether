@@ -1,3 +1,21 @@
+@media only screen and (min-width: 700px){
+    .big-btn {
+        margin: 5rem; 
+        font-size: 2rem;
+        padding: 1rem 2.8rem;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .big-btn {
+        margin: 2rem; 
+        font-size: 2rem;
+        padding: 1rem 2.8rem;
+        display: inline-block;
+    }
+}
+
 :root {
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
@@ -10,7 +28,7 @@
 
 body {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: var(--text-secondary);
 }
 
@@ -29,12 +47,10 @@ button:hover {
     color: var(--text-tertiary);
   }
 
-.big-btn {
-    margin: 5rem; 
-    font-size: 2rem;
-    padding: 1rem 2.8rem;
-    display: inline-block;
-  }
+.medium-btn {
+    font-size: 1.8rem;
+    padding: 0 0.7rem 0.1rem 0.7rem
+}
 
 .body_box {
 	display: grid;
@@ -78,6 +94,12 @@ button:hover {
 }
 
 /* Spinner Styling: always show arrows */
+
+input[type=number] {
+    font-size: 1.8rem;
+    width: 3.6rem;
+    padding: 0.2rem 0.3rem 0 0.3rem;
+}
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {  

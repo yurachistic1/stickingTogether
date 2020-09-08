@@ -24,12 +24,12 @@
     font-size: 2.4rem;
 }
 
-@media only screen and (min-width: 960px){
+@media only screen and (min-width: 700px){
     .sticker {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        width: 96rem;
-        padding: 2rem 0 2rem 0;
+        max-width: 96rem;
+        padding: 2rem 1rem 2rem 1rem;
     }
     
     .sticker-text {
@@ -40,17 +40,17 @@
     }
     
     .sticker-text p {
-        width: 54rem;
+        max-width: 54rem;
         margin: 0.3rem 0 0.3rem 0
     }
 
     .sticker-image {
         margin: 0;
-        width: 30rem;
+        max-width: 30rem;
     }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 700px) {
     .sticker {
         display: grid;
         width: 90vw;
