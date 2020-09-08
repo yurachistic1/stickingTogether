@@ -1,75 +1,143 @@
+@media only screen and (min-width: 703px){
+    
+    .website-header {
+        grid-column: 2 / span 10;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        font-size: 8rem;
+        font-family: 'Gaegu';
+        color: var(--text-primary);
+        margin: 0;
+    }
+    
+    #logo-link {
+        grid-column: 2 / span 10;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+
+    #logo {
+        width: 12.5rem;
+        margin-left: -3.3rem;
+        margin-bottom: -4rem 
+    }
+
+    .hamburger {
+        display: none;
+    }
+    
+    .basket-icon {
+        grid-column: 12 / span 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        font-size: 3rem; 
+        align-self: center;
+        color: var(--text-primary);
+        position: relative;
+    }
+    
+    .navbar {
+        grid-column: 2 / span 10;
+        grid-row-start: 3;
+        grid-row-end: 3;
+    }
+    
+    .navbar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .nav-item {
+        margin: 2rem 2.5rem 2rem 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .nav-item:first-child {
+        margin-left: 0;
+    }
+    .nav-item:last-child {
+        margin-right: 0;
+    }
+    
+    .hr {
+        display: inline-block;
+    }
+    .hr:before {
+        content: '';
+        display: block;
+        border-top: 0.2rem solid var(--text-primary);
+        margin: 0;
+    }
+
+}
+
+@media only screen and (max-width: 702px){
+    .website-header {
+        display: none;
+    }
+
+    #logo-link {
+        grid-column: 4 / span 6;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+    
+    #logo {
+        width: 7rem;
+    }
+
+    .hamburger {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 1;
+        font-size: 3rem;
+        color: var(--text-primary);
+        align-self: center;
+        
+    }
+    
+    .basket-icon {
+        grid-column: 10 / span 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        font-size: 3rem; 
+        align-self: center;
+        color: var(--text-primary);
+        position: relative;
+    }
+    
+    .navbar {
+        display: block;
+        height: 0;
+        opacity: 0;
+        grid-column: 1 / span 12;
+        grid-row: 2 / span 1;
+        justify-self: left;
+        overflow: hidden;
+        transition: opacity 0.8s ease-out;
+    }
+
+    .navbar-nav{
+        padding-left: 2rem;
+        margin-top: 0;
+    }
+
+    .nav-item {
+        margin: 0rem 0rem 1.5rem 0rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+
 .navbar-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto auto auto;
+    grid-auto-rows: auto;
     justify-items: center;
     background-color: var(--bg-primary);
-    margin: 0;
-}
-
-.website-header {
-    grid-column: 2 / span 10;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    font-size: 8rem;
-    font-family: 'Gaegu';
-    color: var(--text-primary);
-    margin: 0;
-}
-
-#logo {
-    grid-column: 2 / span 10;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    width: 12.5rem;
-    margin-left: -3.3rem;
-    margin-bottom: -4rem 
-}
-
-.basket-icon {
-    grid-column: 12 / span 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    font-size: 3rem; 
-    align-self: center;
-    color: var(--text-primary);
-    position: relative;
-}
-
-.navbar {
-    grid-column: 2 / span 10;
-    grid-row-start: 3;
-    grid-row-end: 3;
-}
-
-.navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.nav-item {
-    margin: 2rem 2.5rem 2rem 2.5rem;
-    font-size: 2rem;
-}
-
-.nav-item:first-child {
-    margin-left: 0;
-}
-.nav-item:last-child {
-    margin-right: 0;
-}
-
-.hr {
-    display: inline-block;
-}
-.hr:before {
-    content: '';
-    display: block;
-    border-top: 0.2rem solid var(--text-primary);
     margin: 0;
 }
 

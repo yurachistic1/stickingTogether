@@ -22,10 +22,13 @@
     </head>
     <body>
         <div class="navbar-grid">
-            <img class="center" id="logo" src="{% static '/generalpages/images/logo.png' %}">
+            <a class="center" id="logo-link" href="{% url 'home'%}"><img id="logo" src="{% static '/generalpages/images/logo.png' %}"></a>
             <a class="basket-icon" href="{% url 'cart' %}"><i class="fas fa-shopping-basket"><span id="bsk-count" class="item-counter">0</span></i></a>
             <header class="website-header">Sticking Together</header>
-            <nav class="navbar hr">
+            <a href="javascript:void(0)" class="hamburger" onclick="toggleNav()">
+                <i id="hamburger-icon" class="fas fa-bars"></i>
+            </a>
+            <nav id="myLinks" class="navbar hr">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">
                         <span class="link-text">Home</span>
@@ -51,6 +54,7 @@
             {% block content %} {% endblock %}
 
             <script type="text/javascript" src="{% static 'generalpages/js/updateCartCounter.js' %}"></script>
+            <script type="text/javascript" src="{% static 'generalpages/js/toggleNav.js' %}"></script>
     </body>
 </html>
 
