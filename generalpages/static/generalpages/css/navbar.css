@@ -96,6 +96,8 @@
         font-size: 3rem;
         color: var(--text-primary);
         align-self: center;
+        justify-self: left;
+        margin-left: 2rem;
         
     }
     
@@ -105,6 +107,8 @@
         grid-row-end: 1;
         font-size: 3rem; 
         align-self: center;
+        justify-self: right;
+        margin-right: 2rem;
         color: var(--text-primary);
         position: relative;
     }
