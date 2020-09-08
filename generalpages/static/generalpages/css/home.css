@@ -5,7 +5,7 @@
 	justify-items:center;
 }
 
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 703px){
 
 	.background_image {
 		background-position: center;
@@ -73,7 +73,7 @@
 	}
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 702px){
 
 	.background_image {
 		background-position: center;
