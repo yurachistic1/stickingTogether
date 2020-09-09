@@ -29,7 +29,3 @@ def cart(request):
                pass
      context = {'items':items}
      return render(request, 'store/cart.html', context)
-
-def checkout(request):
-      context = {}
-      return render(request, 'store/checkout.html', context)
