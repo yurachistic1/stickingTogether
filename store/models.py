@@ -37,8 +37,10 @@ class Sticker(models.Model):
 
     ordering = models.IntegerField(verbose_name="Order of appearance(lowest first)", default=1)
 
+    def __str__(self):
+        return  self.name + "-ordering: " + str(self.ordering)
+
     class Meta:
         ordering = ['ordering']
 
-    def __str__(self):
-        return ' '.join[self.name, "Ordering:", str(self.ordering)]
+    
