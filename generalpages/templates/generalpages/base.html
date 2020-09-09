@@ -6,7 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
         
-        {% block title %} {% endblock %}
+        <title>{% block title %} {% endblock %}</title>
+        
         <link rel="shortcut icon" type='image/x-icon' href="{% static 'generalpages/images/favicon.ico' %}"/>
         <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -47,7 +48,7 @@
                         <span class="link-text">Artists</span>
                     </a></li>
                     <li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link">
-                        <span class="link-text">Contacts</span>
+                        <span class="link-text">Contact Us</span>
                     </a></li>
                 </ul>
             </nav> 
