@@ -1,5 +1,17 @@
+window.addEventListener('resize', makeNavAppear);
+let x = document.getElementById("myLinks");
+
+function makeNavAppear(){
+    if(window.innerWidth >= 703){
+        x.style.height = "100%"
+        x.style.opacity = "1"
+    } else {
+        x.style.height = "0"
+        x.style.opacity = "0"
+    }
+}
+
 function toggleNav() {
-    var x = document.getElementById("myLinks");
     if (x.style.height === "100%") {
       x.style.height = "0"
       x.style.opacity = "0"

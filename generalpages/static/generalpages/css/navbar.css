@@ -4,7 +4,7 @@
         grid-column: 2 / span 10;
         grid-row-start: 2;
         grid-row-end: 2;
-        font-size: 8rem;
+        font-size: 7.5rem;
         font-family: 'Gaegu';
         color: var(--text-primary);
         margin: 0;
@@ -40,6 +40,9 @@
         grid-column: 2 / span 10;
         grid-row-start: 3;
         grid-row-end: 3;
+        display: block;
+        height: 100%;
+        opacity: 1;
     }
     
     .navbar-nav {
