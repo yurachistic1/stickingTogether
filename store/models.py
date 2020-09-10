@@ -15,6 +15,7 @@ class Sticker(models.Model):
 
     name = models.CharField(max_length=30, unique=True)
     price = models.FloatField(verbose_name="Price (£)")
+    price_sg = models.FloatField(verbose_name="Price (S$)")
     description = models.TextField(default="", blank=True)
     dimensions = models.CharField(verbose_name="Dimensions (A x B cm)", null=True, max_length=10)
     artist = models.CharField(max_length=30)
