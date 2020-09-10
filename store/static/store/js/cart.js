@@ -79,3 +79,9 @@ function recalculateTotal(){
 		a.innerHTML = total.toFixed(2)
 	}
 }
+
+function locationChange(){
+	let loc = document.getElementById('storeLoc').value
+	document.cookie='storeLoc=' + JSON.stringify(loc) + ";domain=;path=/"
+	location.reload()
+}

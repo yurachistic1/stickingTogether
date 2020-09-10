@@ -7,7 +7,8 @@ from .models import Sticker
 def stickers(request):
 
      try:
-          loc = json.loads(request.COOKIES['storeLoc'])
+          loc = request.COOKIES['storeLoc']
+          assert loc == 'UK' or loc == 'SG'
      except:
           loc = "UK"
 
@@ -16,6 +17,12 @@ def stickers(request):
      return render(request, 'store/stickers.html', context)
 
 def cart(request):
+
+     try:
+          loc = request.COOKIES['storeLoc']
+          assert loc == 'UK' or loc == 'SG'
+     except:
+          loc = "UK"
      
      try:
           cart = json.loads(request.COOKIES['cart'])
@@ -30,8 +37,11 @@ def cart(request):
                qt = cart[i]['quantity']
                int(qt)
                product = Sticker.objects.get(name=i)
-               items.append((product, qt, product.price * qt))
+               if loc == 'UK':
+                    items.append((product, qt, product.price * qt))
+               else:
+                    items.append((product, qt, product.price_sg * qt))
           except:
                pass
-     context = {'items':items}
+     context = {'items':items, 'location': loc}
      return render(request, 'store/cart.html', context)

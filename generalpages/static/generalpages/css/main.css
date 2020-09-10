@@ -93,6 +93,15 @@ button:hover {
 	content: "£";
 }
 
+.price-sg {
+	color: var(--text-tertiary);
+	font-weight: bold;
+}
+
+.price-sg::before {
+	content: "S$";
+}
+
 /* Spinner Styling: always show arrows */
 
 input[type=number] {

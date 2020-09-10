@@ -10,31 +10,67 @@
 {% block content %}
 <div class="body_box">
     <p class="page_header">Shopping Basket</p>
+
     {% if items %}
+    <p class="content-body text-al-cntr">
+        Currently we are only shipping our stickers to United Kingdom and Singapore. You are
+        viewing the 
+        <strong>{% if location == 'UK' %} UK {% else %} Singapore {% endif %}</strong> 
+        store page. To switch select a different one below:
+    </p>
+
+    <select id="storeLoc" onchange="locationChange()" style="font-size: 1.8rem; font-family: inherit;">
+        {% if location == 'UK' %}
+        <option value="UK" selected>United Kingdom</option>
+        <option value="SG">Singapore</option>
+        {% else %}
+        <option value="UK">United Kingdom</option>
+        <option value="SG" selected>Singapore</option>
+        {% endif %}
+    </select>
+    
     <div class="align-end">Total</div>
     {% for item, i, tot in items %}
     <div class="product border-top">
         <img class="product-image pad" src="{{ item.image_1.url }}">
         <p id="name{{forloop.counter0}}" class="product-desc">{{item.name}}</p>
+        {% if location == 'UK' %}
         <p id="total{{forloop.counter0}}" class="sub-total product-price price">{{tot|floatformat:2}}</p>
+        {% else %}
+        <p id="total{{forloop.counter0}}" class="sub-total product-price price-sg">{{tot|floatformat:2}}</p>        {% endif %}
         <p class="product-quantity" >
             Quantity: 
             <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="20">
             <button class="update-cart medium-btn" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="delete"> Remove </button>
+            
+            {% if location == 'UK' %}
             <input type="hidden" id="price{{forloop.counter0}}" value="{{item.price}}">
+            {% else %}
+            <input type="hidden" id="price{{forloop.counter0}}" value="{{item.price_sg}}">
+            {% endif %}
         </p>
     </div>
     {% endfor %}
 
+    {% if location == 'UK' %}
     <div class="pad product-shipping border-top">
         <span>Shipping</span>
-        <span id="shipID" class="sub-total price">2.00</span>
+        <span id="shipID" class="sub-total price">1.00</span>
     </div>
 
     <div id="totalID" class="pad align-end price border-top">0</div>
+    {% else %}
+    <div class="pad product-shipping border-top">
+        <span>Shipping</span>
+        <span id="shipID" class="sub-total price-sg">1.00</span>
+    </div>
+
+    <div id="totalID" class="pad align-end price-sg border-top">0</div>
+    {% endif %}
+
     <div id="paypal-button-container"></div>
     <script type="text/javascript" src="{% static 'store/js/cart.js' %}"></script> 
-    <script src="https://www.paypal.com/sdk/js?client-id=AeznO-wtAY_hi27DLqs3oA7_r85yQLh59brXe7CNQMxyeaWT2ORiy2F3JETLfKq-w00JoZVl6pbKvyfc&currency=GBP&disable-funding=credit,card"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AeznO-wtAY_hi27DLqs3oA7_r85yQLh59brXe7CNQMxyeaWT2ORiy2F3JETLfKq-w00JoZVl6pbKvyfc&currency={% if location == 'UK' %}GBP{% else %}SGD{% endif %}&disable-funding=credit,card"></script>
     <script type="text/javascript" src="{% static 'store/js/paypalLogic.js' %}"></script>  
     {% else %}
     <p class="section-header">Your basket is empty:(</p>

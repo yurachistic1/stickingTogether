@@ -16,13 +16,20 @@
         They’re perfect for laptops, water bottles, notebook covers and more! 
     </p>
     <p class="content-body text-al-cntr">
-        Currently we are only shipping our stickers to United Kingdom and Singapore. You are currently
-        viewing the <strong>UK store</strong>  page. To switch select a different one below:
+        Currently we are only shipping our stickers to United Kingdom and Singapore. You are
+        viewing the 
+        <strong>{% if location == 'UK' %} UK {% else %} Singapore {% endif %}</strong> 
+        store page. To switch select a different one below:
     </p>
 
-    <select name="storeLoc" id="storeLoc">
+    <select id="storeLoc" onchange="locationChange()" style="font-size: 1.8rem; font-family: inherit;">
+        {% if location == 'UK' %}
+        <option value="UK" selected>United Kingdom</option>
+        <option value="SG">Singapore</option>
+        {% else %}
         <option value="UK">United Kingdom</option>
-        <option value="saab">Singapore</option>
+        <option value="SG" selected>Singapore</option>
+        {% endif %}
       </select>
 
     <p class="subheading">Stickers for the Lebanese Red Cross</p>
@@ -35,7 +42,11 @@
             <div class="sticker-top">
                 <div class="sticker-name-price">
                     <span class="sticker-name">{{sticker.name}}</span>
+                    {% if location == 'UK' %}
                     <span class="sticker-price price">{{sticker.price|floatformat:2}}</span>
+                    {% else %}
+                    <span class="sticker-price price-sg">{{sticker.price_sg|floatformat:2}}</span>
+                    {% endif %}
                 </div>
                 <p>Dimensions: {{sticker.dimensions}}</p>
                 <p>{{sticker.description}}</p>
