@@ -18,8 +18,6 @@ function getCookie(name) {
     return null;
 }
 
-let maybeCart = JSON.parse(getCookie('cart'))
-
 function createCart(cart) {
 
     if (cart == undefined){
@@ -30,5 +28,19 @@ function createCart(cart) {
     return cart;
 }
 
+function createStoreLocCookie(storeLoc){
+    if (storeLoc == undefined){
+        storeLoc = "UK"
+        document.cookie='storeLoc=' + JSON.stringify(storeLoc) + ";domain=;path=/"
+    }
+
+    return storeLoc
+}
+
+let maybeCart = JSON.parse(getCookie('cart'))
 
 createCart(maybeCart)
+
+let maybeLoc = JSON.parse(getCookie('storeLoc'))
+
+createStoreLocCookie(maybeLoc)
