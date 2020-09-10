@@ -2,7 +2,7 @@ window.addEventListener('resize', makeNavAppear);
 let x = document.getElementById("myLinks");
 
 function makeNavAppear(){
-    if(window.innerWidth >= 703){
+    if(window.innerWidth >= 825){
         x.style.height = "100%"
         x.style.opacity = "1"
     } else {
