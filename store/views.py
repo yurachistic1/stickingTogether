@@ -5,8 +5,14 @@ from .models import Sticker
 # Create your views here.
 
 def stickers(request):
+
+     try:
+          loc = json.loads(request.COOKIES['storeLoc'])
+     except:
+          loc = "UK"
+
      stickers = Sticker.objects.all()
-     context = {'stickers': stickers}
+     context = {'stickers': stickers, 'location': loc}
      return render(request, 'store/stickers.html', context)
 
 def cart(request):
