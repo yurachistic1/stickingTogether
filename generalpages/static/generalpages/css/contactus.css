@@ -1,0 +1,154 @@
+/*For customising hyperlinks*/ 
+.link {
+	display: inline;
+	color: var(--text-primary);
+	text-decoration: none;
+}
+
+
+.link:hover {
+	color: var(--text-tertiary);
+}
+
+/*For customising textarea*/
+textarea {
+    resize: none;
+}
+
+@media only screen and (max-width: 799px){
+    .contact_container {
+        display: grid;
+        margin: 0 1rem 0 1rem;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(5rem, auto);
+        justify-items: center;
+    }
+
+    .contact_description {
+        text-align: justify;
+        max-width: 50rem;
+    }
+
+    .contact_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-container{
+        max-width: 50rem;
+        padding: 2rem
+    }
+}
+
+@media only screen and (min-width: 800px){
+    /*For the grid*/
+    .contact_container {
+        display: grid;
+        margin: 0 1rem 0 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(5rem, auto);
+        grid-template-areas: 
+            "ct ct"
+            "cd fc"
+            "cd fc"
+            "cd cb";
+        column-gap: 5rem;
+        justify-items: left;
+    }
+
+    .contact_title {
+        grid-area: ct;
+        text-align: left;
+    }
+
+    .contact_description {
+        grid-area: cd;
+        text-align: left;
+        max-width: 45rem;
+    }
+
+    .contact_button {
+        grid-area: cb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-container{
+        grid-area: fc;
+        padding: 2rem;
+        max-width: 45rem;
+    }
+}
+/*For the animated form boxes*/
+.form-group{
+	margin-bottom: 1rem;
+	transition:all .3s;
+}
+
+.form-label{
+	display: block;
+	opacity:1;
+	transform: translate(.5rem, -2.6rem);
+	transform-origin: 0 0;
+	transition: all .3s;
+}
+
+.form-label-textarea{
+	font-size: 1em;
+	color:#102e38;
+	font-family: "Poppins";
+	display: block;
+	opacity:1;
+	transform: translate(.6rem, -17rem);
+	transform-origin: 0 0;
+	transition: all .3s;
+}
+
+
+.form-control{
+	box-shadow: none;
+	background-color: rgba(0,0,0,0);
+	border-radius: 0px;
+	border-width: 1px;
+	border-color: #ccc;
+	border-style: none none solid none;
+	width: 100%;
+	transition: all 0s;
+	padding: 0.5rem;
+}
+
+.form-control:hover{
+	border-style: solid;
+	border-width: 1px;
+}
+
+.form-control::placeholder{
+	color:transparent;
+}
+
+.form-control:focus{
+	box-shadow: none;
+	outline: none;
+	border-color: var(--text-primary)
+}
+
+.form-group:focus-within{
+	transform: scale(1.05, 1.05);
+}
+
+/*For the input boxes*/
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label
+{
+	transform: translateY(-5rem) scale(.75);
+}
+
+/*For the message box*/
+.form-control:focus + .form-label-textarea,
+.form-control:not(:placeholder-shown) + .form-label-textarea
+{
+	color:transparent;
+	transform: translateY(-21.5rem) scale(.6);
+}

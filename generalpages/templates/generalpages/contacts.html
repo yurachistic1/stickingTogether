@@ -3,6 +3,49 @@
 
 {% block title %} Sticking Together - Contact Us {% endblock %}
 
+{% block extra_head_content %} 
+  <link rel="stylesheet" type="text/css" href="{% static 'generalpages/css/contactus.css'%}">
+{% endblock %}
+
 {% block content %}
-    <h3>contacts</h3>
+<p class="page_header">Contact Us</p>
+
+<div class="body_box">
+    <div class="contact_container">
+        <p class="subheading contact_title" style="margin: 0;">Want to get in touch?</p>
+        <p class="contact_description">
+            Thanks for visiting our website! 
+            <br>
+            <br>
+            We'd love to hear your thoughts. If you have any questions, suggestions or want to donate a design to us for a cause, let us know!
+            <br>
+            <br>
+            You can fill in the form or <a class="link" href="mailto:stickingtogetherfor@gmail.com">email</a> us.
+            Also, why not find us on <a class="link" href="https://www.instagram.com/stickingtogetherfor/" target="_blank">Instagram</a> and give us a follow?
+        </p>
+        <div class="form-container">
+            <form action="" method="POST" class="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder=" " id="name" name="name" tabindex="1" required>
+                    <label for="name" class="form-label">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder=" " id="email" name="email" tabindex="2" required>
+                    <label for="email" class="form-label">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="subject" class="form-control" placeholder=" " id="subject" name="subject" tabindex="2" maxlength="40" required>
+                    <label for="subject" class="form-label">Subject</label>
+                </div>
+                <div class="form-group">
+                    <textarea type="textarea" class="form-control" placeholder=" " id="textarea" name="textarea" tabindex="3" required cols="60" rows="10"></textarea>
+                    <label for="textarea" class="form-label-textarea">Your Message</label>
+                </div>
+                <div class="contact_button">
+                    <button class="big-btn">Send it!</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
