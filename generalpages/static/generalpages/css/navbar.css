@@ -1,4 +1,4 @@
-@media only screen and (min-width: 825px){
+@media only screen and (min-width: 850px){
     
     .website-header {
         grid-column: 2 / span 10;
@@ -78,7 +78,7 @@
 
 }
 
-@media only screen and (max-width: 824px){
+@media only screen and (max-width: 849px){
     .website-header {
         display: none;
     }
