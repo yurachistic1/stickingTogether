@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY') #'ksc39&k_l$x24sf9*5t@f8_k_xrdi3&n-n#5x%ig8wo)%f0y&a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = False
 
-ALLOWED_HOSTS = ['sticking-together-app.herokuapp.com']
+ALLOWED_HOSTS = ['https://sticking-together-app.herokuapp.com/']
 
 
 # Application definition
