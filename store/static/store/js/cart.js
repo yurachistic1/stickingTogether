@@ -107,14 +107,3 @@ function locationChange(){
 	document.cookie='storeLoc=' + JSON.stringify(loc) + ";domain=;path=/"
 	location.reload()
 }
-
-function getNoOfItems(){
-    let counter = document.getElementById('bsk-count')
-    cart = JSON.parse(getCookie('cart'))
-    total = 0
-    for (const value of Object.values(cart)){
-        total += value['quantity']
-    }
-
-    counter.innerHTML = total
-}
