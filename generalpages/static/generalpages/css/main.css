@@ -102,6 +102,21 @@ button:hover {
 	content: "S$";
 }
 
+.instock {
+    color: #1dcc40;
+    font-weight: bold;
+}
+
+.preorder {
+    color: #eb9b1a;
+    font-weight: bold;
+}
+
+.soldout {
+    color: #de190b;
+    font-weight: bold;
+}
+
 /* Spinner Styling: always show arrows */
 
 input[type=number] {

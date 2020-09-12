@@ -13,7 +13,7 @@
 
     {% if items %}
     <p class="content-body text-al-cntr">
-        Currently we are only shipping our stickers to United Kingdom and Singapore. You are
+        Currently we are only shipping our stickers to <u>United Kingdom</u> and <u>Singapore</u>. You are
         viewing the 
         <strong>{% if location == 'UK' %} UK {% else %} Singapore {% endif %}</strong> 
         store page. To switch select a different one below:
@@ -38,7 +38,22 @@
         <p id="total{{forloop.counter0}}" class="sub-total product-price price">{{tot|floatformat:2}}</p>
         {% else %}
         <p id="total{{forloop.counter0}}" class="sub-total product-price price-sg">{{tot|floatformat:2}}</p>        {% endif %}
-        <p class="product-quantity" >
+        <div class="product-quantity" >
+
+            {% if location == 'UK' %} 
+                {% if item.uk_stock == 0 %}
+                    <p class="soldout availability">Sold out.</p>
+                {% else %}
+                    <p class="preorder availability">Preorder now. Shipped by 21/09. {{item.uk_stock}} left.</p>
+                {% endif %}
+            {% else %} 
+                {% if item.singapore_stock == 0 %}
+                    <p class="soldout availability">Sold out.</p>
+                {% else %}
+                    <p class="instock availability">In stock. {{item.singapore_stock}} left.</p>
+                {% endif %}
+            {% endif %}
+
             Quantity: 
             <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="20">
             <button class="update-cart medium-btn" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="delete"> Remove </button>
@@ -48,7 +63,7 @@
             {% else %}
             <input type="hidden" id="price{{forloop.counter0}}" value="{{item.price_sg}}">
             {% endif %}
-        </p>
+        </div>
     </div>
     {% endfor %}
 

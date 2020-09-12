@@ -16,7 +16,7 @@
         They’re perfect for laptops, water bottles, notebook covers and more! 
     </p>
     <p class="content-body text-al-cntr">
-        Currently we are only shipping our stickers to United Kingdom and Singapore. You are
+        Currently we are only shipping our stickers to <u>United Kingdom</u> and <u>Singapore</u>. You are
         viewing the 
         <strong>{% if location == 'UK' %} UK {% else %} Singapore {% endif %}</strong> 
         store page. To switch select a different one below:
@@ -52,9 +52,27 @@
                 <p>{{sticker.description}}</p>
             </div>
             <div class="sticker-bottom">
-                <p>Designed by: {{sticker.artist}}</p>
-                <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
-                <input id="amount{{forloop.counter0}}" class="sticker-quantity" type="number" step="1" value="1" min="1" max="20">
+                {% if location == 'UK' %} 
+                    {% if sticker.uk_stock == 0 %}
+                        <p class="soldout">Sold out.</p>
+                        <p>Designed by: {{sticker.artist}}</p>
+                    {% else %}
+                        <p class="preorder">Preorder now. Shipped by 21/09. {{sticker.uk_stock}} left.</p>
+                        <p>Designed by: {{sticker.artist}}</p>
+                        <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
+                        <input id="amount{{forloop.counter0}}" class="sticker-quantity" type="number" step="1" value="1" min="1" max="{{sticker.uk_stock}}">
+                    {% endif %}
+                {% else %} 
+                    {% if sticker.singapore_stock == 0 %}
+                        <p class="soldout">Sold out.</p>
+                        <p>Designed by: {{sticker.artist}}</p>
+                    {% else %}
+                        <p class="instock">In stock. {{sticker.singapore_stock}} left.</p>
+                        <p>Designed by: {{sticker.artist}}</p>
+                        <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
+                        <input id="amount{{forloop.counter0}}" class="sticker-quantity" type="number" step="1" value="1" min="1" max="{{sticker.singapore_stock}}">
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>

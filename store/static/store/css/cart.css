@@ -7,6 +7,10 @@
 	padding-bottom: 1rem;
 }
 
+.availability {
+	margin-bottom: 1rem;
+}
+
 @media only screen and (min-width: 703px){
 
 	.body_box {
