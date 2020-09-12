@@ -2,12 +2,10 @@ paypal.Buttons({
     createOrder: function(data, actions) {
 
     const loc = JSON.parse(getCookie('storeLoc'))
-    console.log(loc)
     let currency = 'GBP'
     if (loc == 'SG'){
         currency = 'SGD'
     } 
-    console.log(currency)
 
     const tot = document.getElementById('totalID').innerHTML
     const ship = document.getElementById('shipID').innerHTML
