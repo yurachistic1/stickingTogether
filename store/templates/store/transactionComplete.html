@@ -1,0 +1,17 @@
+{% extends 'generalpages/base.html' %}
+{% load static %}
+
+{% block title %} Thank You - Sticking Together {% endblock %}
+
+{% block content %}
+<div class="body_box">
+  <p class="page_header">Thank You!</p>
+  <div class="content-body text-al-cntr">
+    <p>We appreciate your purchase and donation! You should get an email from 
+       Paypal confirming the transaction and then again once we have shipped
+       the order.
+    </p>
+  </div>
+</div>
+<script type="text/javascript" src="{% static 'store/js/emptyCart.js' %}"></script>
+{% endblock %}
