@@ -77,6 +77,11 @@
         <span id="shipID" class="sub-total price">1.00</span>
     </div>
 
+    <div class="pad product-shipping border-top">
+        <span>Paypal Fee</span>
+        <span id="feeID" class="sub-total price">0.30</span>
+    </div>
+
     <div id="totalID" class="pad align-end price border-top">0</div>
     {% else %}
     <div class="pad product-shipping border-top">
@@ -84,10 +89,25 @@
         <span id="shipID" class="sub-total price-sg">1.00</span>
     </div>
 
+    <div class="pad product-shipping border-top">
+        <span>Paypal Fee</span>
+        <span id="feeID" class="sub-total price-sg">0.50</span>
+    </div>
+
     <div id="totalID" class="pad align-end price-sg border-top">0</div>
     {% endif %}
-
+    
+    <div>Checkout with:</div>
     <div id="paypal-button-container"></div>
+
+    <p class="content-body text-al-cntr border-top" style="max-width: 50rem;">
+        Checkout process is handled by Paypal so that we don't 
+        have to collect or store your sensitive data.
+        <br>
+        The stickers once ordered will be shipped within 2 days and 
+        should be with you in around 5 days. 
+    </p>
+
     <script type="text/javascript" src="{% static 'store/js/cart.js' %}"></script> 
     <script src="https://www.paypal.com/sdk/js?client-id=AeznO-wtAY_hi27DLqs3oA7_r85yQLh59brXe7CNQMxyeaWT2ORiy2F3JETLfKq-w00JoZVl6pbKvyfc&currency={% if location == 'UK' %}GBP{% else %}SGD{% endif %}&disable-funding=credit,card"></script>
     <script type="text/javascript" src="{% static 'store/js/paypalLogic.js' %}"></script>  
