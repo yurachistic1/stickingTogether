@@ -1,15 +1,3 @@
-/*For customising hyperlinks*/ 
-.link {
-	display: inline;
-	color: var(--text-primary);
-	text-decoration: none;
-}
-
-
-.link:hover {
-	color: var(--text-tertiary);
-}
-
 /*For customising textarea*/
 textarea {
     resize: none;

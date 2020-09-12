@@ -117,6 +117,18 @@ button:hover {
     font-weight: bold;
 }
 
+/*For customising hyperlinks*/ 
+.link {
+	display: inline;
+	color: var(--text-primary);
+	text-decoration: none;
+}
+
+
+.link:hover {
+	color: var(--text-tertiary);
+}
+
 /* Spinner Styling: always show arrows */
 
 input[type=number] {
