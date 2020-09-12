@@ -9,6 +9,7 @@ paypal.Buttons({
 
     const tot = document.getElementById('totalID').innerHTML
     const ship = document.getElementById('shipID').innerHTML
+    const fee = document.getElementById('feeID').innerHTML
 
     const stickers = document.getElementsByClassName('product')
 
@@ -33,12 +34,16 @@ paypal.Buttons({
             breakdown: {
                 item_total: {
                     currency_code: currency,
-                    value: (tot-ship).toFixed(2)
+                    value: (tot-ship-fee).toFixed(2)
                 },
                 shipping: {
                     currency_code: currency,
                     value: ship
                 },
+                handling: {
+                    currency_code: currency,
+                    value: fee
+                }
             }
 
         },
