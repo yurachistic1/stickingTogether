@@ -18,4 +18,4 @@ class Inquiry(models.Model):
         return  active + " Subject: " + self.subject + (self.datetime).strftime(" (%x - %X)")
 
     class Meta:
-        ordering = ['datetime']
+        ordering = ['status' ,'-datetime']

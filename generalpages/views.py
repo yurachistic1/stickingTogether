@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import *
 
 # Create your views here.
 
@@ -19,5 +20,11 @@ def artists(request):
       return render(request, 'generalpages/artists.html', context)
 
 def contacts(request):
+
+      if request.method == 'POST':
+        form = InquiryForm(request.POST)
+        if form.is_valid():
+            form.save()
+
       context = {}
       return render(request, 'generalpages/contacts.html', context)
