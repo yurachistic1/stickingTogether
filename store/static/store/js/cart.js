@@ -7,7 +7,6 @@ for (i = 0; i < updateCartQtBtns.length; i++){
 	let name = updateCartQtBtns[i].dataset.product
 	let qt = document.getElementById('amount'.concat(updateCartQtBtns[i].dataset.id)).value
 	syncCart[name] = {'quantity': parseInt(qt)}
-	console.log(syncCart)
 	f(syncCart)
 }
 
