@@ -38,8 +38,10 @@ def cart(request):
                int(qt)
                product = Sticker.objects.get(name=i)
                if loc == 'UK':
+                    qt = min(qt, product.uk_stock)
                     items.append((product, qt, product.price * qt))
                else:
+                    qt = min(qt, product.singapore_stock)
                     items.append((product, qt, product.price_sg * qt))
           except:
                pass

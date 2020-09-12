@@ -55,7 +55,11 @@
             {% endif %}
 
             Quantity: 
-            <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="20">
+            {% if location == 'UK' %} 
+                <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="{{item.uk_stock}}">
+            {% else %}
+                <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="{{item.singapore_stock}}">
+            {% endif %}
             <button class="update-cart medium-btn" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="delete"> Remove </button>
             
             {% if location == 'UK' %}

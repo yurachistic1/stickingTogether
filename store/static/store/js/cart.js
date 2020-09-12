@@ -1,6 +1,16 @@
 let updateBtns = document.getElementsByClassName('update-cart')
 let updateCartQtBtns = document.getElementsByClassName('product-qt-spinner')
 
+let syncCart = {}
+
+for (i = 0; i < updateCartQtBtns.length; i++){
+	let name = updateCartQtBtns[i].dataset.product
+	let qt = document.getElementById('amount'.concat(updateCartQtBtns[i].dataset.id)).value
+	syncCart[name] = {'quantity': parseInt(qt)}
+	console.log(syncCart)
+	f(syncCart)
+}
+
 for (i = 0; i < updateBtns.length; i++) {
 	updateBtns[i].addEventListener('click', handleEvent)
 }
@@ -16,6 +26,15 @@ function handleEvent(){
 	let action = this.dataset.action
 	let counterid = this.dataset.id
 	let amount = document.getElementById('amount'.concat(counterid)).value
+	let max = document.getElementById('amount'.concat(counterid)).max
+
+	if (parseInt(amount) < 1){
+		amount = 1
+		document.getElementById('amount'.concat(counterid)).value = 1
+	} else if (parseInt(amount) > parseInt(max)){
+		amount = max
+		document.getElementById('amount'.concat(counterid)).value = max
+	}
 
 	if (action == 'change'){
 		let oldTotal = document.getElementById('total'.concat(counterid))
@@ -24,10 +43,10 @@ function handleEvent(){
 		recalculateTotal()
 	}
 	
-	addCookieItem(productName, action, amount)
+	addCookieItem(productName, action, amount, max)
 }
 
-function addCookieItem(productId, action, amount){
+function addCookieItem(productId, action, amount, max){
     
     cart = JSON.parse(getCookie('cart'))
 
@@ -36,7 +55,11 @@ function addCookieItem(productId, action, amount){
 		cart[productId] = {'quantity': parseInt(amount)}
 
 		}else{
-			cart[productId]['quantity'] += parseInt(amount)
+			if (cart[productId]['quantity'] + parseInt(amount) > parseInt(max)){
+				cart[productId]['quantity'] = parseInt(max)
+			} else {
+				cart[productId]['quantity'] += parseInt(amount)
+			}
 		}
 
 		f(cart)
@@ -48,7 +71,7 @@ function addCookieItem(productId, action, amount){
 			f(cart)
 			location.reload()
 		} else {
-			cart[productId]['quantity'] = parseInt(amount)
+			cart[productId]['quantity'] = Math.min(parseInt(amount), parseInt(max))
 			f(cart)
 		}
 	}
@@ -84,4 +107,15 @@ function locationChange(){
 	let loc = document.getElementById('storeLoc').value
 	document.cookie='storeLoc=' + JSON.stringify(loc) + ";domain=;path=/"
 	location.reload()
+}
+
+function getNoOfItems(){
+    let counter = document.getElementById('bsk-count')
+    cart = JSON.parse(getCookie('cart'))
+    total = 0
+    for (const value of Object.values(cart)){
+        total += value['quantity']
+    }
+
+    counter.innerHTML = total
 }
