@@ -25,6 +25,7 @@
         </p>
         <div class="form-container">
             <form action="" method="POST" class="form">
+                {% csrf_token %}
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder=" " id="name" name="name" tabindex="1" required>
                     <label for="name" class="form-label">Your Name</label>
