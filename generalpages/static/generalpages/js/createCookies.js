@@ -1,10 +1,10 @@
 function getCookie(name) {
     // Split cookie string and get all individual name=value pairs in an array
-    let cookieArr = document.cookie.split(";");
+    var cookieArr = document.cookie.split(";");
 
     // Loop through the array elements
-    for(let i = 0; i < cookieArr.length; i++) {
-        let cookiePair = cookieArr[i].split("=");
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
 
         /* Removing whitespace at the beginning of the cookie name
         and compare it with the given string */
@@ -37,10 +37,10 @@ function createStoreLocCookie(storeLoc){
     return storeLoc
 }
 
-let maybeCart = JSON.parse(getCookie('cart'))
+var maybeCart = JSON.parse(getCookie('cart'))
 
 createCart(maybeCart)
 
-let maybeLoc = JSON.parse(getCookie('storeLoc'))
+var maybeLoc = JSON.parse(getCookie('storeLoc'))
 
 createStoreLocCookie(maybeLoc)

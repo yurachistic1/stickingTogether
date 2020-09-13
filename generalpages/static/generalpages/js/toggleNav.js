@@ -1,5 +1,5 @@
 window.addEventListener('resize', makeNavAppear);
-let x = document.getElementById("myLinks");
+var x = document.getElementById("myLinks");
 
 function makeNavAppear(){
     if(window.innerWidth >= 850){

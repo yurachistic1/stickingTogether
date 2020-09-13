@@ -1,20 +1,20 @@
 paypal.Buttons({
     createOrder: function(data, actions) {
 
-    const loc = JSON.parse(getCookie('storeLoc'))
-    let currency = 'GBP'
+    var loc = JSON.parse(getCookie('storeLoc'))
+    var currency = 'GBP'
     if (loc == 'SG'){
         currency = 'SGD'
     } 
 
-    const tot = document.getElementById('totalID').innerHTML
-    const ship = document.getElementById('shipID').innerHTML
-    const fee = document.getElementById('feeID').innerHTML
+    var tot = document.getElementById('totalID').innerHTML
+    var ship = document.getElementById('shipID').innerHTML
+    var fee = document.getElementById('feeID').innerHTML
 
-    const stickers = document.getElementsByClassName('product')
+    var stickers = document.getElementsByClassName('product')
 
-    let arr = []
-    for(let i = 0; i < stickers.length; i++){
+    var arr = []
+    for(var i = 0; i < stickers.length; i++){
         arr.push( {
                 name: document.getElementById('name'.concat(i)).innerHTML,
                 unit_amount: {
@@ -62,11 +62,11 @@ paypal.Buttons({
 
 function getCookie(name) {
     // Split cookie string and get all individual name=value pairs in an array
-    let cookieArr = document.cookie.split(";");
+    var cookieArr = document.cookie.split(";");
 
     // Loop through the array elements
-    for(let i = 0; i < cookieArr.length; i++) {
-        let cookiePair = cookieArr[i].split("=");
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
 
         /* Removing whitespace at the beginning of the cookie name
         and compare it with the given string */

@@ -1,8 +1,8 @@
 function getNoOfItems(){
-    let counter = document.getElementById('bsk-count')
+    var counter = document.getElementById('bsk-count')
     cart = JSON.parse(getCookie('cart'))
     total = 0
-    for (const value of Object.values(cart)){
+    for (var value of Object.values(cart)){
         total += value['quantity']
     }
 

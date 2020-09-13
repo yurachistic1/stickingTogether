@@ -1,11 +1,11 @@
-let updateBtns = document.getElementsByClassName('update-cart')
-let updateCartQtBtns = document.getElementsByClassName('product-qt-spinner')
+var updateBtns = document.getElementsByClassName('update-cart')
+var updateCartQtBtns = document.getElementsByClassName('product-qt-spinner')
 
-let syncCart = {}
+var syncCart = {}
 
 for (i = 0; i < updateCartQtBtns.length; i++){
-	let name = updateCartQtBtns[i].dataset.product
-	let qt = document.getElementById('amount'.concat(updateCartQtBtns[i].dataset.id)).value
+	var name = updateCartQtBtns[i].dataset.product
+	var qt = document.getElementById('amount'.concat(updateCartQtBtns[i].dataset.id)).value
 	syncCart[name] = {'quantity': parseInt(qt)}
 	f(syncCart)
 }
@@ -21,11 +21,11 @@ for (i = 0; i < updateCartQtBtns.length; i++){
 recalculateTotal()
 
 function handleEvent(){
-	let productName = this.dataset.product
-	let action = this.dataset.action
-	let counterid = this.dataset.id
-	let amount = document.getElementById('amount'.concat(counterid)).value
-	let max = document.getElementById('amount'.concat(counterid)).max
+	var productName = this.dataset.product
+	var action = this.dataset.action
+	var counterid = this.dataset.id
+	var amount = document.getElementById('amount'.concat(counterid)).value
+	var max = document.getElementById('amount'.concat(counterid)).max
 
 	if (parseInt(amount) < 1){
 		amount = 1
@@ -36,8 +36,8 @@ function handleEvent(){
 	}
 
 	if (action == 'change'){
-		let oldTotal = document.getElementById('total'.concat(counterid))
-		let price = document.getElementById('price'.concat(counterid)).value
+		var oldTotal = document.getElementById('total'.concat(counterid))
+		var price = document.getElementById('price'.concat(counterid)).value
 		oldTotal.innerHTML = (amount * price).toFixed(2)
 		recalculateTotal()
 	}
@@ -89,21 +89,21 @@ function f(cart){
 }
 
 function recalculateTotal(){
-	let subTotals = document.getElementsByClassName('sub-total')
+	var subTotals = document.getElementsByClassName('sub-total')
 	total = 0
 	for (i = 0; i < subTotals.length; i++) {
 
 		total += parseFloat(subTotals[i].innerHTML)
 	}
 
-	let a = document.getElementById('totalID')
+	var a = document.getElementById('totalID')
 	if(a != null){
 		a.innerHTML = total.toFixed(2)
 	}
 }
 
 function locationChange(){
-	let loc = document.getElementById('storeLoc').value
+	var loc = document.getElementById('storeLoc').value
 	document.cookie='storeLoc=' + JSON.stringify(loc) + ";domain=;path=/"
 	location.reload()
 }
