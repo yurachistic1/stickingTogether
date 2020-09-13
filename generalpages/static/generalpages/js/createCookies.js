@@ -22,7 +22,7 @@ function createCart(cart) {
 
     if (cart == undefined){
         cart = {}
-        document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+        document.cookie ='cart=' + JSON.stringify(cart) + ";path=/"
     }
 
     return cart;
@@ -31,7 +31,7 @@ function createCart(cart) {
 function createStoreLocCookie(storeLoc){
     if (storeLoc == undefined){
         storeLoc = "UK"
-        document.cookie='storeLoc=' + JSON.stringify(storeLoc) + ";domain=;path=/"
+        document.cookie='storeLoc=' + JSON.stringify(storeLoc) + ";path=/"
     }
 
     return storeLoc

@@ -84,7 +84,7 @@ function addCookieItem(productId, action, amount, max){
 }
 
 function f(cart){
-    document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+    document.cookie ='cart=' + JSON.stringify(cart) + ";path=/"
     getNoOfItems()
 }
 
@@ -104,6 +104,6 @@ function recalculateTotal(){
 
 function locationChange(){
 	var loc = document.getElementById('storeLoc').value
-	document.cookie='storeLoc=' + JSON.stringify(loc) + ";domain=;path=/"
+	document.cookie='storeLoc=' + JSON.stringify(loc) + ";path=/"
 	location.reload()
 }

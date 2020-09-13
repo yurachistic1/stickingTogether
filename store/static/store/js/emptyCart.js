@@ -1,2 +1,2 @@
-document.cookie ='cart=' + JSON.stringify({}) + ";domain=;path=/"
+document.cookie ='cart=' + JSON.stringify({}) + ";path=/"
 getNoOfItems()
