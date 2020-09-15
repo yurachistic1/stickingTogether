@@ -41,6 +41,10 @@ function handleEvent(){
 		oldTotal.innerHTML = (amount * price).toFixed(2)
 		recalculateTotal()
 	}
+
+	if (action == 'add'){
+		addConfirmation(this)
+	}
 	
 	addCookieItem(productName, action, amount, max)
 }
@@ -106,4 +110,9 @@ function locationChange(){
 	var loc = document.getElementById('storeLoc').value
 	document.cookie='storeLoc=' + JSON.stringify(loc) + ";max-age=3600;path=/"
 	location.reload()
+}
+
+function addConfirmation(btn){
+	btn.innerHTML = "Items added!"
+	setTimeout(function(){ btn.innerHTML = 'Add to basket' }, 1000);
 }
