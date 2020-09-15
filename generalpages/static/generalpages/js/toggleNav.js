@@ -1,11 +1,11 @@
 window.addEventListener('resize', makeNavAppear);
 var x = document.getElementById("myLinks");
 var content = document.getElementById("content");
+var menuIcon = document.querySelector('#hamburger-icon')
 
 makeNavAppear()
 
 function makeNavAppear(){
-  console.log(navHeight)
     if(window.innerWidth >= 850){
         x.style.height = "100%"
         x.style.opacity = "1"
@@ -13,13 +13,12 @@ function makeNavAppear(){
     } else {
         x.style.height = "0"
         x.style.opacity = "0"
-        var navHeight = (document.querySelector('.navbar-grid')).offsetHeight
-        content.style.marginTop = navHeight + "px"
+        content.style.marginTop = "7rem"
+        replaceClass(menuIcon, 'fa-times', 'fa-bars')
     }
 }
 
 function toggleNav() {
-  menuIcon = document.querySelector('#hamburger-icon')
     if (x.style.height === "100%") {
       x.style.height = "0"
       x.style.opacity = "0"
