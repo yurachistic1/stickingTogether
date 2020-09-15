@@ -1,3 +1,5 @@
+getNoOfItems()
+
 function getNoOfItems(){
     var counter = document.getElementById('bsk-count')
     cart = JSON.parse(getCookie('cart'))

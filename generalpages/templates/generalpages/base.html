@@ -21,7 +21,6 @@
         </style>
     
         <script type="text/javascript" src="{% static 'generalpages/js/createCookies.js' %}"></script>
-        <script type="text/javascript" src="{% static 'generalpages/js/updateCartCounter.js' %}"></script>
     </head>
     <body>
         <div class="navbar-grid">
@@ -54,7 +53,7 @@
                 </ul>
             </nav> 
         </div>
-        <script>getNoOfItems();</script>
+        <script type="text/javascript" src="{% static 'generalpages/js/updateCartCounter.js' %}"></script>
         <div id="content">
             {% block content %} {% endblock %}
         </div>
