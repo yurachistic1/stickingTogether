@@ -24,10 +24,14 @@ function toggleNav() {
       x.style.height = "0"
       x.style.opacity = "0"
       replaceClass(menuIcon, 'fa-times', 'fa-bars')
+      var navHeight = (document.querySelector('.navbar-grid')).offsetHeight
+      content.style.marginTop = navHeight + "px"
     } else {
       x.style.height = "100%"
       x.style.opacity = "1"
       replaceClass(menuIcon, 'fa-bars', 'fa-times')
+      var navHeight = (document.querySelector('.navbar-grid')).offsetHeight
+      content.style.marginTop = navHeight + "px"
     }
   }
 
