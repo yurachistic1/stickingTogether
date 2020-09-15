@@ -79,6 +79,13 @@
 }
 
 @media only screen and (max-width: 849px){
+
+    .navbar-grid {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
     .website-header {
         display: none;
     }
