@@ -1,165 +1,164 @@
-@media only screen and (min-width: 703px){
-    .big-btn {
-        margin: 5rem; 
-        font-size: 2rem;
-        padding: 1rem 2.8rem;
-        display: inline-block;
-    }
+@media only screen and (min-width: 703px) {
+  .big-btn {
+    margin: 5rem;
+    font-size: 2rem;
+    padding: 1rem 2.8rem;
+    display: inline-block;
+  }
 }
 
-@media only screen and (max-width: 702px){
-    .big-btn {
-        margin: 2rem; 
-        font-size: 2rem;
-        padding: 1rem 2.8rem;
-        display: inline-block;
-    }
+@media only screen and (max-width: 702px) {
+  .big-btn {
+    margin: 2rem;
+    font-size: 2rem;
+    padding: 1rem 2.8rem;
+    display: inline-block;
+  }
 }
 
 :root {
-    font-size: 10px;
-    font-family: 'Poppins', sans-serif;
-    color: #102e38;
-    --text-primary: #f2b445; /* mustard */
-    --text-secondary: #102e38; /* emerald */
-    --text-tertiary: #df5e4a; /* coral */
-    --bg-primary: #102e38;
-  }
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #102e38;
+  --text-primary: #f2b445; /* mustard */
+  --text-secondary: #102e38; /* emerald */
+  --text-tertiary: #df5e4a; /* coral */
+  --bg-primary: #102e38;
+}
 
 body {
-    margin: 0;
-    font-size: 1.8rem;
-    color: var(--text-secondary);
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  /* https://stackoverflow.com/questions/37793086/why-is-the-font-style-bold-not-correctly-applied-in-chrome-on-this-website */
+  -webkit-font-smoothing: antialiased;
 }
 
 button {
-    background-color: var(--text-secondary); 
-    font-family: inherit;
-    border: none;
-    color: var(--text-primary); 
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 0.4rem;
-  }
+  background-color: var(--text-secondary);
+  font-family: inherit;
+  border: none;
+  color: var(--text-primary);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 0.4rem;
+}
 
 button:hover {
-    color: var(--text-tertiary);
-  }
+  color: var(--text-tertiary);
+}
 
 button:focus {
-    color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .medium-btn {
-    font-size: 1.8rem;
-    padding: 0 0.7rem 0.1rem 0.7rem
+  font-size: 1.8rem;
+  padding: 0 0.7rem 0.1rem 0.7rem;
 }
 
 .body_box {
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 .content-body {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    max-width: 96rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  max-width: 96rem;
 }
 
 .page_header {
-    font-size: 6rem;
-    font-family: 'Gaegu';
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+  font-size: 6rem;
+  font-family: "Gaegu";
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .section-header {
-	font-size: 4rem;
-	font-family: "Gaegu";
-	text-align: center;
+  font-size: 4rem;
+  font-family: "Gaegu";
+  text-align: center;
 }
 
 .subheading {
-    font-size: 3rem;
-    color: var(--text-tertiary);
-    margin: 2rem
+  font-size: 3rem;
+  color: var(--text-tertiary);
+  margin: 2rem;
 }
 
 .price {
-	color: var(--text-tertiary);
-	font-weight: bold;
+  color: var(--text-tertiary);
+  font-weight: bold;
 }
 
 .price::before {
-	content: "£";
+  content: "£";
 }
 
 .price-sg {
-	color: var(--text-tertiary);
-	font-weight: bold;
+  color: var(--text-tertiary);
+  font-weight: bold;
 }
 
 .price-sg::before {
-	content: "S$";
+  content: "S$";
 }
 
 .instock {
-    color: #1dcc40;
-    font-weight: bold;
+  color: #1dcc40;
+  font-weight: bold;
 }
 
 .preorder {
-    color: #eb9b1a;
-    font-weight: bold;
+  color: #eb9b1a;
+  font-weight: bold;
 }
 
 .soldout {
-    color: #de190b;
-    font-weight: bold;
+  color: #de190b;
+  font-weight: bold;
 }
 
-/*For customising hyperlinks*/ 
+/*For customising hyperlinks*/
 .link {
-	display: inline;
-	color: var(--text-primary);
-	text-decoration: none;
+  display: inline;
+  color: var(--text-primary);
+  text-decoration: none;
 }
-
 
 .link:hover {
-	color: var(--text-tertiary);
+  color: var(--text-tertiary);
 }
 
 /* Spinner Styling: always show arrows */
 
-input[type=number] {
-    font-size: 1.8rem;
-    width: 3.6rem;
-    padding: 0.2rem 0.3rem 0 0.3rem;
+input[type="number"] {
+  font-size: 1.8rem;
+  width: 3.6rem;
+  padding: 0.2rem 0.3rem 0 0.3rem;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {  
-
-    opacity: 1;
- 
- }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
 
 /* Utility */
 
-.text-al-just{
-    text-align: justify;
+.text-al-just {
+  text-align: justify;
 }
 
 .text-al-cntr {
-    text-align: center;
+  text-align: center;
 }
 
 .border-top {
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: #8080805c;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #8080805c;
 }
