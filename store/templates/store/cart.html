@@ -44,13 +44,13 @@
                 {% if item.uk_stock == 0 %}
                     <p class="soldout availability">Sold out.</p>
                 {% else %}
-                    <p class="preorder availability">Preorder now. Shipped by 21/09. {{item.uk_stock}} left.</p>
+                    <p class="preorder availability">In stock. {% if item.uk_stock < 11 %} {{item.uk_stock}} left. {% endif %}</p>
                 {% endif %}
             {% else %} 
                 {% if item.singapore_stock == 0 %}
                     <p class="soldout availability">Sold out.</p>
                 {% else %}
-                    <p class="instock availability">In stock. {{item.singapore_stock}} left.</p>
+                    <p class="instock availability">In stock. {% if item.singapore_stock < 11 %} {{item.singapore_stock}} left. {% endif %}</p>
                 {% endif %}
             {% endif %}
 
