@@ -44,7 +44,7 @@
                 {% if item.uk_stock == 0 %}
                     <p class="soldout availability">Sold out.</p>
                 {% else %}
-                    <p class="preorder availability">In stock. {% if item.uk_stock < 11 %} {{item.uk_stock}} left. {% endif %}</p>
+                    <p class="instock availability">In stock. {% if item.uk_stock < 11 %} {{item.uk_stock}} left. {% endif %}</p>
                 {% endif %}
             {% else %} 
                 {% if item.singapore_stock == 0 %}

@@ -58,7 +58,7 @@
                         <p class="soldout">Sold out.</p>
                         <p>Designed by: {{sticker.artist}}</p>
                     {% else %}
-                        <p class="preorder">In stock. {% if sticker.uk_stock < 11 %} {{sticker.uk_stock}} left. {% endif %} </p>
+                        <p class="instock">In stock. {% if sticker.uk_stock < 11 %} {{sticker.uk_stock}} left. {% endif %} </p>
                         <p>Designed by: {{sticker.artist}}</p>
                         <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
                         <input id="amount{{forloop.counter0}}" class="sticker-quantity" type="number" step="1" value="1" min="1" max="{{sticker.uk_stock}}">
