@@ -1,75 +1,140 @@
 .shop_grid {
-    display: grid;
-    justify-items: center;
+  display: grid;
+  justify-items: center;
 }
 
 .subheading {
-    text-align: center;
+  text-align: center;
 }
 
 .sticker-name-price {
-    display: flex; 
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .sticker-images {
-    justify-self: center;
+  justify-self: center;
+  position: relative;
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
 }
 
 .sticker-name {
-    font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
 .sticker-price {
-    font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
-@media only screen and (min-width: 703px){
-    .sticker {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        max-width: 96rem;
-        padding: 2rem 1rem 2rem 1rem;
-    }
-    
-    .sticker-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: 1rem;
-    }
-    
-    .sticker-text p {
-        max-width: 54rem;
-        margin: 0.3rem 0 0.3rem 0
-    }
+.slides {
+  display: none;
+}
 
-    .sticker-image {
-        margin: 0;
-        max-width: 30rem;
-    }
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -2.2rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.8rem;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  padding: 0.2rem 0.9rem 0.2rem 1.1rem;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 703px) {
+  .sticker {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 96rem;
+    padding: 2rem 1rem 2rem 1rem;
+  }
+
+  .sticker-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1rem;
+  }
+
+  .sticker-text p {
+    max-width: 54rem;
+    margin: 0.3rem 0 0.3rem 0;
+  }
+
+  .sticker-image {
+    margin: 0;
+    max-width: 30rem;
+  }
+
+  .prev:hover,
+  .next:hover {
+    transform: scale(1.2);
+  }
 }
 
 @media only screen and (max-width: 702px) {
-    .sticker {
-        display: grid;
-        width: 90vw;
-        grid-template-columns: 1fr;
-        padding: 2rem 0 2rem 0;
-    }
+  .sticker {
+    display: grid;
+    width: 90vw;
+    grid-template-columns: 1fr;
+    padding: 2rem 0 2rem 0;
+  }
 
-    .sticker-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+  .sticker-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    .sticker-text p {
-        margin: 0.3rem 0 0.3rem 0
-    }
+  .sticker-text p {
+    margin: 0.3rem 0 0.3rem 0;
+  }
 
-    .sticker-image {
-        margin: 0;
-        width: 70vw;
-    }
+  .sticker-image {
+    margin: 0;
+    width: 70vw;
+  }
 }

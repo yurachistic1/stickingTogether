@@ -36,8 +36,16 @@
     <p class="subheading">Stickers for the Lebanese Red Cross</p>
     {% for sticker in stickers %}
     <div class="border-top sticker">
-        <div class="sticker-images">
-            <img class="sticker-image" src="{{ sticker.image_1.url }}">
+        <div id="{{sticker.id}}" class="sticker-images slideshow-container">
+            <div class="slides{{sticker.id}} fade slides">
+                <img class="sticker-image" src="{{ sticker.image_1.url }}">
+            </div>
+
+            <div class="slides{{sticker.id}} fade slides">
+                <img class="sticker-image" src="{{ sticker.image_2.url }}">
+            </div>
+            <a id="pslides{{sticker.id}}" class="prev" onclick="plusSlides(-1, 'slides{{sticker.id}}', 0)">&#10094;</a>
+            <a id="nslides{{sticker.id}}" class="next" onclick="plusSlides(1, 'slides{{sticker.id}}', 0)">&#10095;</a>
         </div>
         <div class="sticker-text">
             <div class="sticker-top">
@@ -80,5 +88,6 @@
     {% endfor %}
 </div>
 
+<script type="text/javascript" src="{% static 'store/js/slides.js' %}"></script>
 <script type="text/javascript" src="{% static 'store/js/cart.js' %}"></script>
 {% endblock %}
