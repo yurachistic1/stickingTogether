@@ -1,6 +1,6 @@
 @media only screen and (min-width: 850px) {
   .content-sm {
-    margin-top: 5rem;
+    margin-top: 22.7rem;
   }
 
   .navbar-grid-sm {
@@ -102,6 +102,10 @@
 }
 
 @media only screen and (max-width: 849px) {
+  .content-mobile {
+    margin-top: 7.5rem;
+  }
+
   .navbar-grid {
     position: fixed;
     top: 0;

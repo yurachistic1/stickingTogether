@@ -3,7 +3,7 @@ logo = document.getElementById("logo-link") // display: none
 header = document.getElementById("website-header") // display: none
 links = document.getElementById("links") // padding: 0.8rem 0 0.8rem 0
 basket = document.getElementById("basket-icon") // grid-row: 3 / span 1
-content = document.getElementById("content") // margin-top: 4 rem
+content = document.getElementById("content") // margin-top: 21 rem
 bar = document.getElementById("myLinks") // remove hr
 collapsed = false
 
@@ -20,7 +20,7 @@ function scrollFunction() {
         links.classList.add("navbar-nav-sm")
         basket.classList.add("basket-icon-sm")
         bar.classList.remove("hr")
-        content.style.marginTop = '4rem'
+        content.classList.add("content-sm")
         collapsed = true
       }
   } else {
@@ -31,7 +31,7 @@ function scrollFunction() {
         links.classList.remove("navbar-nav-sm")
         basket.classList.remove("basket-icon-sm")
         bar.classList.add("hr")
-        content.style.marginTop = "0"
+        content.classList.remove("content-sm")
         collapsed = false
       }
   }

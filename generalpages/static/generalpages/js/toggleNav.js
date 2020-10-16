@@ -9,11 +9,11 @@ function makeNavAppear(){
     if(window.innerWidth >= 850){
         x.style.height = "100%"
         x.style.opacity = "1"
-        content.style.marginTop = 0
+        content.classList.remove("content-mobile")
     } else {
         x.style.height = "0"
         x.style.opacity = "0"
-        content.style.marginTop = "7rem"
+        content.classList.add("content-mobile")
         replaceClass(menuIcon, 'fa-times', 'fa-bars')
     }
 }
