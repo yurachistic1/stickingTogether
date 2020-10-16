@@ -40,13 +40,27 @@
             <div class="slides{{sticker.id}} fade slides">
                 <img class="sticker-image" src="{{ sticker.image_1.url }}">
             </div>
-
+            {% if sticker.image_2 %}
             <div class="slides{{sticker.id}} fade slides">
                 <img class="sticker-image" src="{{ sticker.image_2.url }}">
             </div>
             <a id="pslides{{sticker.id}}" class="prev" onclick="plusSlides(-1, 'slides{{sticker.id}}', 0)">&#10094;</a>
             <a id="nslides{{sticker.id}}" class="next" onclick="plusSlides(1, 'slides{{sticker.id}}', 0)">&#10095;</a>
+            {% endif %}
         </div>
+
+
+        <!-- <div id="{{sticker.id}}" class="sticker-images slideshow-container">
+            
+            {% for img in sticker.stickerimage_set.all %}
+                <div class="slides{{sticker.id}} fade slides">
+                    <img class="sticker-image" src="{{ img.image.url }}">
+                </div>
+            {% endfor %}
+            <a id="pslides{{sticker.id}}" class="prev" onclick="plusSlides(-1, 'slides{{sticker.id}}', 0)">&#10094;</a>
+            <a id="nslides{{sticker.id}}" class="next" onclick="plusSlides(1, 'slides{{sticker.id}}', 0)">&#10095;</a>
+        </div> -->
+
         <div class="sticker-text">
             <div class="sticker-top">
                 <div class="sticker-name-price">

@@ -18,8 +18,10 @@ function showSlides(n, id) {
       slides[i].style.display = "none";
   }
   slides[n].style.display = "block";
-  next = document.getElementById("n" + id)
-  prev = document.getElementById("p" + id)
-  next.onclick = function() {plusSlides(1, id, n)}
-  prev.onclick = function() {plusSlides(-1, id, n)}
+  if (slides.length > 1){
+    next = document.getElementById("n" + id)
+    prev = document.getElementById("p" + id)
+    next.onclick = function() {plusSlides(1, id, n)}
+    prev.onclick = function() {plusSlides(-1, id, n)}
+  }
 }

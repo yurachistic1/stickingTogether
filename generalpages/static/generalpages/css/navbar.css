@@ -178,6 +178,7 @@
   justify-items: center;
   background-color: var(--bg-primary);
   margin: 0;
+  z-index: 2;
 }
 
 a.nav-link {
