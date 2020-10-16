@@ -12,7 +12,7 @@ rem = parseInt((getComputedStyle(document.querySelector(":root")).getPropertyVal
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > rem * 18 || document.documentElement.scrollTop > rem * 18) {
+  if (document.body.scrollTop > rem * 20 || document.documentElement.scrollTop > rem * 20) {
       if (!collapsed){
         navbar.classList.add("navbar-grid-sm")
         logo.classList.add("logo-sm")
