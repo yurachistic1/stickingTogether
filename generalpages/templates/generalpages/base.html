@@ -23,15 +23,15 @@
         <script type="text/javascript" src="{% static 'generalpages/js/createCookies.js' %}"></script>
     </head>
     <body>
-        <div class="navbar-grid">
+        <div id="navbar" class="navbar-grid">
             <a class="center" id="logo-link" href="{% url 'home'%}"><img id="logo" src="{% static '/generalpages/images/logo.png' %}"></a>
-            <a class="basket-icon" href="{% url 'cart' %}"><i class="fas fa-shopping-basket"><span id="bsk-count" class="item-counter">0</span></i></a>
-            <header class="website-header">Sticking Together</header>
+            <a class="basket-icon" id="basket-icon" href="{% url 'cart' %}"><i class="fas fa-shopping-basket"><span id="bsk-count" class="item-counter">0</span></i></a>
+            <header id="website-header" class="website-header">Sticking Together</header>
             <a href="javascript:void(0)" class="hamburger" onclick="toggleNav()">
                 <i id="hamburger-icon" class="fas fa-bars"></i>
             </a>
             <nav id="myLinks" class="navbar hr">
-                <ul class="navbar-nav">
+                <ul id="links" class="navbar-nav">
                     <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">
                         <span class="link-text">Home</span>
                     </a></li>
@@ -60,6 +60,7 @@
             
 
             <script type="text/javascript" src="{% static 'generalpages/js/toggleNav.js' %}"></script>
+            <script type="text/javascript" src="{% static 'generalpages/js/menuCollapseFS.js' %}"></script>
     </body>
 </html>
 

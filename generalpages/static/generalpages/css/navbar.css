@@ -1,180 +1,201 @@
-@media only screen and (min-width: 850px){
-    
-    .website-header {
-        grid-column: 2 / span 10;
-        grid-row-start: 2;
-        grid-row-end: 2;
-        font-size: 7.5rem;
-        font-family: 'Gaegu';
-        color: var(--text-primary);
-        margin: 0;
-    }
-    
-    #logo-link {
-        grid-column: 2 / span 10;
-        grid-row-start: 1;
-        grid-row-end: 1;
-    }
+@media only screen and (min-width: 850px) {
+  .content-sm {
+    margin-top: 5rem;
+  }
 
-    #logo {
-        width: 12.5rem;
-        margin-left: -3.3rem;
-        margin-bottom: -4rem 
-    }
+  .navbar-grid-sm {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 
-    .hamburger {
-        display: none;
-    }
-    
-    .basket-icon {
-        grid-column: 12 / span 1;
-        grid-row-start: 1;
-        grid-row-end: 1;
-        font-size: 3rem; 
-        align-self: center;
-        color: var(--text-primary);
-        position: relative;
-    }
-    
-    .navbar {
-        grid-column: 2 / span 10;
-        grid-row-start: 3;
-        grid-row-end: 3;
-        display: block;
-        height: 100%;
-        opacity: 1;
-    }
-    
-    .navbar-nav {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .nav-item {
-        margin: 2rem 2.5rem 2rem 2.5rem;
-        font-size: 2rem;
-    }
-    
-    .nav-item:first-child {
-        margin-left: 0;
-    }
-    .nav-item:last-child {
-        margin-right: 0;
-    }
-    
-    .hr {
-        display: inline-block;
-    }
-    .hr:before {
-        content: '';
-        display: block;
-        border-top: 0.2rem solid var(--text-primary);
-        margin: 0;
-    }
+  .website-header {
+    grid-column: 2 / span 10;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    font-size: 7.5rem;
+    font-family: "Gaegu";
+    color: var(--text-primary);
+    margin: 0;
+  }
 
+  .website-header-sm {
+    display: none;
+  }
+
+  #logo-link {
+    grid-column: 2 / span 10;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+
+  #logo {
+    width: 12.5rem;
+    margin-left: -3.3rem;
+    margin-bottom: -4rem;
+  }
+
+  .logo-sm {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .basket-icon {
+    grid-column: 12 / span 1;
+    grid-row: 1 / span 1;
+    font-size: 3rem;
+    align-self: center;
+    color: var(--text-primary);
+    position: relative;
+  }
+
+  .basket-icon-sm {
+    grid-row: 3 / span 1;
+  }
+
+  .navbar {
+    grid-column: 2 / span 10;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    display: block;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .navbar-nav {
+    list-style: none;
+    padding: 2rem 0 2rem 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-nav-sm {
+    padding: 0.8rem 0 0.8rem 0;
+  }
+
+  .nav-item {
+    margin: 0 2.5rem 0 2.5rem;
+    font-size: 2rem;
+  }
+
+  .nav-item:first-child {
+    margin-left: 0;
+  }
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+
+  .hr {
+    display: inline-block;
+  }
+  .hr:before {
+    content: "";
+    display: block;
+    border-top: 0.2rem solid var(--text-primary);
+    margin: 0;
+  }
 }
 
-@media only screen and (max-width: 849px){
+@media only screen and (max-width: 849px) {
+  .navbar-grid {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 
-    .navbar-grid {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
+  .website-header {
+    display: none;
+  }
 
-    .website-header {
-        display: none;
-    }
+  #logo-link {
+    grid-column: 4 / span 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
 
-    #logo-link {
-        grid-column: 4 / span 6;
-        grid-row-start: 1;
-        grid-row-end: 1;
-    }
-    
-    #logo {
-        width: 7rem;
-    }
+  #logo {
+    width: 7rem;
+  }
 
-    .hamburger {
-        grid-column: 1 / span 3;
-        grid-row: 1 / span 1;
-        font-size: 3rem;
-        color: var(--text-primary);
-        align-self: center;
-        justify-self: left;
-        margin-left: 2rem;
-        
-    }
-    
-    .basket-icon {
-        grid-column: 10 / span 3;
-        grid-row-start: 1;
-        grid-row-end: 1;
-        font-size: 3rem; 
-        align-self: center;
-        justify-self: right;
-        margin-right: 2rem;
-        color: var(--text-primary);
-        position: relative;
-    }
-    
-    .navbar {
-        display: block;
-        height: 0;
-        opacity: 0;
-        grid-column: 1 / span 12;
-        grid-row: 2 / span 1;
-        justify-self: left;
-        overflow: hidden;
-        transition: opacity 0.8s ease-out;
-    }
+  .hamburger {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    font-size: 3rem;
+    color: var(--text-primary);
+    align-self: center;
+    justify-self: left;
+    margin-left: 2rem;
+  }
 
-    .navbar-nav{
-        padding-left: 2rem;
-        margin-top: 0;
-    }
+  .basket-icon {
+    grid-column: 10 / span 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-size: 3rem;
+    align-self: center;
+    justify-self: right;
+    margin-right: 2rem;
+    color: var(--text-primary);
+    position: relative;
+  }
 
-    .nav-item {
-        margin: 0rem 0rem 1.5rem 0rem;
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
+  .navbar {
+    display: block;
+    height: 0;
+    opacity: 0;
+    grid-column: 1 / span 12;
+    grid-row: 2 / span 1;
+    justify-self: left;
+    overflow: hidden;
+    transition: opacity 0.8s ease-out;
+  }
+
+  .navbar-nav {
+    padding-left: 2rem;
+    margin-top: 0;
+  }
+
+  .nav-item {
+    margin: 0rem 0rem 1.5rem 0rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
 }
 
 .navbar-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: auto;
-    justify-items: center;
-    background-color: var(--bg-primary);
-    margin: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  justify-items: center;
+  background-color: var(--bg-primary);
+  margin: 0;
 }
 
 a.nav-link {
-    text-decoration: none;
-    color: var(--text-primary);
+  text-decoration: none;
+  color: var(--text-primary);
 }
 
 a.nav-link:hover {
-    font-weight: bold;
-    color: var(--text-tertiary);
+  font-weight: bold;
+  color: var(--text-tertiary);
 }
 
 .item-counter {
-    background-color: var(--text-tertiary);
-    border-radius: 0.2rem;
-    color: white;
-    font-family: "Poppins";
-   
-    padding: 0.2rem 0.4rem;
-    font-size: 1.2rem;
-    
-    position: absolute; /* Position the badge within the relatively positioned button */
-    bottom: 0.5rem;
-    right: -0.9rem;
-  }
+  background-color: var(--text-tertiary);
+  border-radius: 0.2rem;
+  color: white;
+  font-family: "Poppins";
+
+  padding: 0.2rem 0.4rem;
+  font-size: 1.2rem;
+
+  position: absolute; /* Position the badge within the relatively positioned button */
+  bottom: 0.5rem;
+  right: -0.9rem;
+}
