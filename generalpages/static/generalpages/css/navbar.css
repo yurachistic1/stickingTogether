@@ -183,11 +183,22 @@
 a.nav-link {
   text-decoration: none;
   color: var(--text-primary);
+  display: inline-block;
+  text-align: center;
 }
 
 a.nav-link:hover {
   font-weight: bold;
   color: var(--text-tertiary);
+}
+
+a.nav-link::before {
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 .item-counter {
