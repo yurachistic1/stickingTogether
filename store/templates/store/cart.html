@@ -32,7 +32,7 @@
     <div class="align-end">Total</div>
     {% for item, i, tot in items %}
     <div class="product border-top">
-        <img class="product-image pad" src="{{ item.image_1.url }}">
+        <img class="product-image pad" src="{{ item.stickerimage_set.first.image.url }}">
         <p id="name{{forloop.counter0}}" class="product-desc">{{item.name}}</p>
         {% if location == 'UK' %}
         <p id="total{{forloop.counter0}}" class="sub-total product-price price">{{tot|floatformat:2}}</p>
