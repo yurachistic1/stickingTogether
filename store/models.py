@@ -3,12 +3,11 @@ from django.db import models
 
 def image_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/<cause>/<filename>
-    return "{0}/{1}".format(instance.cause, filename)
+    return "{0}/{1}".format(instance.sticker.cause, filename)
 
 
 def image_directory_path2(instance, filename):
-    # file will be uploaded to MEDIA_ROOT/<cause>/<filename>
-    return "{0}/{1}".format(instance.sticker.cause, filename)
+    pass
 
 
 # Create your models here.
@@ -32,19 +31,6 @@ class Sticker(models.Model):
     singapore_stock = models.IntegerField()
     uk_stock = models.IntegerField()
     cause = models.CharField(max_length=5, choices=CAUSES_CHOICES)
-    image_1 = models.ImageField(
-        verbose_name="Primary Image",
-        upload_to=image_directory_path,
-        null=True,
-        blank=True,
-    )
-
-    image_2 = models.ImageField(
-        verbose_name="Secondary Image",
-        upload_to=image_directory_path,
-        null=True,
-        blank=True,
-    )
 
     ordering = models.IntegerField(
         verbose_name="Order of appearance(lowest first)", default=1
@@ -59,8 +45,8 @@ class Sticker(models.Model):
 
 class StickerImage(models.Model):
     text_description = models.CharField(max_length=100)
-    image = models.ImageField(upload_to=image_directory_path2)
+    image = models.ImageField(upload_to=image_directory_path)
     sticker = models.ForeignKey(Sticker, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text_description + str(self.id)
+        return self.text_description
