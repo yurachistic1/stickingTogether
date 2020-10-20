@@ -1,45 +1,70 @@
-var updateBtns = document.getElementsByClassName('update-cart')
-var updateCartQtBtns = document.getElementsByClassName('product-qt-spinner')
+// plus minus qty buttons
 
-var syncCart = {}
+var plusMinusBtns = document.getElementsByClassName('sticker-qt-button')
 
-for (i = 0; i < updateCartQtBtns.length; i++){
-	var name = updateCartQtBtns[i].dataset.product
-	var qt = document.getElementById('amount'.concat(updateCartQtBtns[i].dataset.id)).value
-	syncCart[name] = {'quantity': parseInt(qt)}
-	f(syncCart)
+for (i = 0; i < plusMinusBtns.length; i++){
+	plusMinusBtns[i].addEventListener('click', updateAmount)
 }
+
+function updateAmount(){
+	var action1 = this.dataset.action1
+	var counterid = this.dataset.id
+	var current = document.getElementById('newamount' + counterid)
+
+	if (action1 === 'plus'){
+		if (parseInt(current.innerHTML) < parseInt(this.dataset.max)){
+			current.innerHTML = parseInt(current.innerHTML) + 1
+		}
+	} else {
+		if (parseInt(current.innerHTML) > parseInt(this.dataset.min)){
+			current.innerHTML = parseInt(current.innerHTML) - 1
+		}
+	}
+
+	if (this.dataset.action === 'change'){
+
+		var oldTotal = document.getElementById('total'.concat(counterid))
+		var price = document.getElementById('price'.concat(counterid)).value
+		oldTotal.innerHTML = (current.innerHTML * price).toFixed(2)
+		recalculateTotal()
+		addCookieItem(this.dataset.product, this.dataset.action, current.innerHTML, this.dataset.max)
+	}
+}
+
+// add to cart buttons and remove buttons
+
+var updateBtns = document.getElementsByClassName('update-cart')
 
 for (i = 0; i < updateBtns.length; i++) {
 	updateBtns[i].addEventListener('click', handleEvent)
 }
 
-for (i = 0; i < updateCartQtBtns.length; i++){
-	updateCartQtBtns[i].addEventListener('change', handleEvent)
-}
-
 recalculateTotal()
 
+var stickerAmounts = document.getElementsByClassName("sticker-qt-amount")
+
+var syncCart = {}
+
+for (i = 0; i < stickerAmounts.length; i++){
+	var name = stickerAmounts[i].dataset.product
+	var qt = stickerAmounts[i].innerHTML
+	syncCart[name] = {'quantity': parseInt(qt)}
+	f(syncCart)
+}
+ 
 function handleEvent(){
 	var productName = this.dataset.product
 	var action = this.dataset.action
 	var counterid = this.dataset.id
-	var amount = document.getElementById('amount'.concat(counterid)).value
-	var max = document.getElementById('amount'.concat(counterid)).max
+	var amount = document.getElementById('newamount'.concat(counterid)).innerHTML
+	var max = document.getElementById('newamount'.concat(counterid)).dataset.max
 
 	if (parseInt(amount) < 1){
 		amount = 1
-		document.getElementById('amount'.concat(counterid)).value = 1
+		document.getElementById('newamount'.concat(counterid)).innerHTML = 1
 	} else if (parseInt(amount) > parseInt(max)){
 		amount = max
-		document.getElementById('amount'.concat(counterid)).value = max
-	}
-
-	if (action == 'change'){
-		var oldTotal = document.getElementById('total'.concat(counterid))
-		var price = document.getElementById('price'.concat(counterid)).value
-		oldTotal.innerHTML = (amount * price).toFixed(2)
-		recalculateTotal()
+		document.getElementById('newamount'.concat(counterid)).innerHTML = max
 	}
 
 	if (action == 'add'){

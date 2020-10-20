@@ -34,6 +34,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* button stuff */
+
 button {
   background-color: var(--text-secondary);
   font-family: inherit;
@@ -56,6 +58,10 @@ button:focus {
 .medium-btn {
   font-size: 1.8rem;
   padding: 0 0.7rem 0.1rem 0.7rem;
+}
+
+.sticker-qt-button {
+  width: 2.5rem;
 }
 
 .body_box {
@@ -109,7 +115,7 @@ button:focus {
 }
 
 .instock {
-  color: #1dcc40;
+  color: #139401;
   font-weight: bold;
 }
 
@@ -121,6 +127,12 @@ button:focus {
 .soldout {
   color: #de190b;
   font-weight: bold;
+}
+
+.sticker-qt-field {
+  display: inline-block;
+  text-align: center;
+  width: 2.4rem;
 }
 
 /*For customising hyperlinks*/

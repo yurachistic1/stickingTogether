@@ -70,7 +70,10 @@
                         <p class="instock">In stock. {% if sticker.uk_stock < 11 %} {{sticker.uk_stock}} left. {% endif %} </p>
                         <p>Designed by: {{sticker.artist}}</p>
                         <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
-                        <input id="amount{{forloop.counter0}}" class="sticker-quantity" type="number" step="1" value="1" min="1" max="{{sticker.uk_stock}}">
+                        <span>Qty:</span>
+                        <button class="medium-btn sticker-qt-button" data-action="nothing" data-action1="minus" data-id="{{forloop.counter0}}" data-min="1" data-max="{{sticker.uk_stock}}"> <span>-</span> </button> 
+                        <span id="newamount{{forloop.counter0}}" class="sticker-qt-field" data-max="{{sticker.uk_stock}}"> 1 </span> 
+                        <button class="medium-btn sticker-qt-button" data-action="nothing" data-action1="plus" data-id="{{forloop.counter0}}" data-min="1" data-max="{{sticker.uk_stock}}"> <span>+</span> </button>
                     {% endif %}
                 {% else %} 
                     {% if sticker.singapore_stock == 0 %}
@@ -80,7 +83,10 @@
                         <p class="instock">In stock.{% if sticker.singapore_stock < 11 %} {{sticker.singapore_stock}} left. {% endif %}</p>
                         <p>Designed by: {{sticker.artist}}</p>
                         <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
-                        <input id="amount{{forloop.counter0}}" class="sticker-quantity" type="number" step="1" value="1" min="1" max="{{sticker.singapore_stock}}">
+                        <span>Qty:</span>
+                        <button class="medium-btn sticker-qt-button" data-action="nothing" data-action1="minus" data-id="{{forloop.counter0}}" data-min="1" data-max="{{sticker.singapore_stock}}"> <span>-</span> </button> 
+                        <span id="newamount{{forloop.counter0}}" class="sticker-qt-field" data-max="{{sticker.singapore_stock}}"> 1 </span> 
+                        <button class="medium-btn sticker-qt-button" data-action="nothing" data-action1="plus" data-id="{{forloop.counter0}}" data-min="1" data-max="{{sticker.singapore_stock}}"> <span>+</span> </button>
                     {% endif %}
                 {% endif %}
             </div>

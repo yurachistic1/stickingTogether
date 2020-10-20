@@ -21,9 +21,11 @@ paypal.Buttons({
                     currency_code: currency,
                     value: document.getElementById('price'.concat(i)).value
                 },
-                quantity: document.getElementById('amount'.concat(i)).value
+                quantity: parseInt(document.getElementById('newamount'.concat(i)).innerHTML)
             })
     }
+
+    console.log(arr)
 
     // This function sets up the details of the transaction, including the amount and line item details.
     return actions.order.create({

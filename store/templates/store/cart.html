@@ -37,7 +37,9 @@
         {% if location == 'UK' %}
         <p id="total{{forloop.counter0}}" class="sub-total product-price price">{{tot|floatformat:2}}</p>
         {% else %}
-        <p id="total{{forloop.counter0}}" class="sub-total product-price price-sg">{{tot|floatformat:2}}</p>        {% endif %}
+        <p id="total{{forloop.counter0}}" class="sub-total product-price price-sg">{{tot|floatformat:2}}</p>        
+        {% endif %}
+
         <div class="product-quantity" >
 
             {% if location == 'UK' %} 
@@ -54,13 +56,50 @@
                 {% endif %}
             {% endif %}
 
-            Quantity: 
-            {% if location == 'UK' %} 
-                <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="{{item.uk_stock}}">
-            {% else %}
-                <input id="amount{{forloop.counter0}}" class="product-qt-spinner" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="change" type="number" step="1" value="{{i}}" min="1" max="{{item.singapore_stock}}">
-            {% endif %}
             <button class="update-cart medium-btn" data-product="{{item.name}}" data-id="{{forloop.counter0}}" data-action="delete"> Remove </button>
+
+            Qty: 
+                {% if location == 'UK' %} 
+                <button class="medium-btn sticker-qt-button" 
+                    data-product="{{item.name}}" 
+                    data-action="change" 
+                    ata-action1="minus" 
+                    data-id="{{forloop.counter0}}" 
+                    data-min="1" 
+                    data-max="{{item.uk_stock}}"> 
+                        <span>-</span> 
+                </button> 
+                <span id="newamount{{forloop.counter0}}" class="sticker-qt-field sticker-qt-amount" data-max="{{item.uk_stock}}" data-product="{{item.name}}"> {{i}} </span>
+                <button class="medium-btn sticker-qt-button" 
+                    data-product="{{item.name}}" 
+                    data-action="change" 
+                    data-action1="plus" 
+                    data-id="{{forloop.counter0}}" 
+                    data-min="1" 
+                    data-max="{{item.uk_stock}}"> 
+                        <span>+</span> 
+                </button>
+                {% else %}
+                <button class="medium-btn sticker-qt-button" 
+                    data-product="{{item.name}}" 
+                    data-action="change" 
+                    ata-action1="minus" 
+                    data-id="{{forloop.counter0}}" 
+                    data-min="1" 
+                    data-max="{{item.singapore_stock}}"> 
+                        <span>-</span> 
+                </button>
+                <span id="newamount{{forloop.counter0}}" class="sticker-qt-field sticker-qt-amount" data-max="{{item.singapore_stock}}" data-product="{{item.name}}"> {{i}} </span>
+                <button class="medium-btn sticker-qt-button" 
+                    data-product="{{item.name}}" 
+                    data-action="change" 
+                    data-action1="plus" 
+                    data-id="{{forloop.counter0}}" 
+                    data-min="1" 
+                    data-max="{{item.singapore_stock}}"> 
+                        <span>+</span> 
+                </button>
+                {% endif %} 
             
             {% if location == 'UK' %}
             <input type="hidden" id="price{{forloop.counter0}}" value="{{item.price}}">
