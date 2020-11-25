@@ -53,9 +53,9 @@
                 <div class="sticker-name-price">
                     <span class="sticker-name">{{sticker.name}}</span>
                     {% if location == 'UK' %}
-                    <span class="sticker-price price">{{sticker.price|floatformat:2}}</span>
+                    <span class="sticker-price price"><s>2.20</s> {{sticker.price|floatformat:2}}</span>
                     {% else %}
-                    <span class="sticker-price price-sg">{{sticker.price_sg|floatformat:2}}</span>
+                    <span class="sticker-price price-sg"><s>3.50</s> {{sticker.price_sg|floatformat:2}}</span>
                     {% endif %}
                 </div>
                 <p>Dimensions: {{sticker.dimensions}}</p>
