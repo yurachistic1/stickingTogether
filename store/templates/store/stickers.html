@@ -58,7 +58,7 @@
                     <span class="sticker-price price-sg">{{sticker.price_sg|floatformat:2}}</span>
                     {% endif %}
                 </div>
-                <p>Dimensions: {{sticker.dimensions}}</p>
+                {% if sticker.dimensions %}<p>Dimensions: {{sticker.dimensions}}</p>{% endif %}
                 <p>{{sticker.description}}</p>
             </div>
             <div class="sticker-bottom">
@@ -68,7 +68,7 @@
                         <p>Designed by: {{sticker.artist}}</p>
                     {% else %}
                         <p class="instock">In stock. {% if sticker.uk_stock < 11 %} {{sticker.uk_stock}} left. {% endif %} </p>
-                        <p>Designed by: {{sticker.artist}}</p>
+                        {% if sticker.artist %}<p>Designed by: {{sticker.artist}}</p> {% endif %}
                         <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
                         <span>Qty:</span>
                         <button class="medium-btn sticker-qt-button" data-action="nothing" data-action1="minus" data-id="{{forloop.counter0}}" data-min="1" data-max="{{sticker.uk_stock}}"> <span>-</span> </button> 
@@ -81,7 +81,7 @@
                         <p>Designed by: {{sticker.artist}}</p>
                     {% else %}
                         <p class="instock">In stock.{% if sticker.singapore_stock < 11 %} {{sticker.singapore_stock}} left. {% endif %}</p>
-                        <p>Designed by: {{sticker.artist}}</p>
+                        {% if sticker.artist %} <p>Designed by: {{sticker.artist}}</p> {% endif %}
                         <button data-product="{{sticker.name}}" data-action="add" data-id="{{forloop.counter0}}" class="add-btn update-cart medium-btn"> Add to basket </button>
                         <span>Qty:</span>
                         <button class="medium-btn sticker-qt-button" data-action="nothing" data-action1="minus" data-id="{{forloop.counter0}}" data-min="1" data-max="{{sticker.singapore_stock}}"> <span>-</span> </button> 

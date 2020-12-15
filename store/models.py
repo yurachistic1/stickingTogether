@@ -25,9 +25,9 @@ class Sticker(models.Model):
     price_sg = models.FloatField(verbose_name="Price (S$)")
     description = models.TextField(default="", blank=True)
     dimensions = models.CharField(
-        verbose_name="Dimensions (A x B cm)", null=True, max_length=10
+        verbose_name="Dimensions (A x B cm)", null=True, max_length=10, blank=True
     )
-    artist = models.CharField(max_length=30)
+    artist = models.CharField(max_length=30, blank=True, null=True)
     singapore_stock = models.IntegerField()
     uk_stock = models.IntegerField()
     cause = models.CharField(max_length=5, choices=CAUSES_CHOICES)
