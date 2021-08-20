@@ -13,6 +13,7 @@ boto3 = "*"
 django-storages = "*"
 gunicorn = "*"
 django-heroku = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"

@@ -76,9 +76,6 @@ def complete(request):
                 int(qt)
                 product = Sticker.objects.get(name=i)
 
-                if i == "2-in-1 Christmas Bundle":
-                    handleBundle(qt, loc)
-
                 if loc == "UK":
                     product.uk_stock = product.uk_stock - qt
                     product.save(update_fields=["uk_stock"])
@@ -91,15 +88,3 @@ def complete(request):
 
     context = {}
     return render(request, "store/transactionComplete.html", context)
-
-
-def handleBundle(qt, loc):
-    bundle = Sticker.objects.all().exclude(name="2-in-1 Christmas Bundle")
-
-    for product in bundle:
-        if loc == "UK":
-            product.uk_stock = product.uk_stock - qt * 2
-            product.save(update_fields=["uk_stock"])
-        else:
-            product.singapore_stock = product.singapore_stock - qt * 2
-            product.save(update_fields=["singapore_stock"])
